@@ -30,6 +30,10 @@ class Product(models.Model):
     """
     Represents a product in the ecommerce system.
     """
+    # Category
+    category = models.ForeignKey(
+        Category, related_name='product', on_delete=models.CASCADE, null=True)
+
     # Title of the product
     item_title = models.CharField(
         max_length=250, help_text="Title of the product")
@@ -46,12 +50,12 @@ class Product(models.Model):
     description = models.TextField(
         default="", blank=True, help_text="Description of the product")
 
+    # Image of the product
+    image = models.ImageField(upload_to='images/')
+
     # A slug for the product URL
     slug = models.SlugField(max_length=50, unique=True,
                             help_text="Unique slug for URL")
-
-    # Image of the product
-    image = models.ImageField(upload_to='images/')
 
     class Meta:
         # Display name for the model in plural form
