@@ -56,8 +56,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            'templates',
-            'store/templates'
+            BASE_DIR / 'templates',  # Project templates directory
+            BASE_DIR / 'store/templates',  # App templates directory
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,7 +127,7 @@ STATICFILES_DIR = [BASE_DIR / 'static', 'store/static']
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = BASE_DIR / 'static/media'
+MEDIA_ROOT = [BASE_DIR / 'static/media']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
