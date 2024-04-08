@@ -5,14 +5,14 @@
     <section class="py-4 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h4>Welcome to Tailored Donuts</h4>
+                <h4>Tailored Donuts Bakery</h4>
                 <br>
-                <p class="lead text-muted">Browse our extensive collection of amazing donuts and other great products..</p>
+                <p class="lead text-muted">Browse our extensive collection.</p>
                 <br>
+                <a href="#" class="btn btn-primary my-2">Shop</a>
             </div>
         </div>
     </section>
-    <!-- All products section -->
     <!-- All products section -->
     <div class="album py-5 bg-light">
         <div class="container">
@@ -20,18 +20,20 @@
             <hr>
             <br>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-                <div class="col">
-                    {% for product in all_products %}
+                {% for product in all_products %}
+                    <div class="col">
                         <div class="card shadow-sm">
                             <img class="img-fluid"
-                                 alt="{{ product.item_title }}"
+                                 alt="Responsive image"
+                                 style="max-height:100%;
+                                        max-width:100%"
                                  src="{{ product.image.url }}">
                             <div class="card-body">
                                 <p class="card-text">
-                                    <a class="text-info text-decoration-none" href="">{{ product.item_title | capfirst }}</a>
+                                    <a class="text-info text-decoration-none" href="">{{ product.item_title }}</a>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h5>{{ product.half_dozen_price }}</h5>
+                                    <h5></h5>
                                 </div>
                             </div>
                         </div>
