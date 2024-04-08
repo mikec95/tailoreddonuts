@@ -1,26 +1,26 @@
 {% extends "./base.html" %}
 {% load static %}
 {% block content %}
+    <!-- Product Details Section -->
     <div class="container">
         <main class="pt-5">
+            <!-- Product Details Row -->
             <div class="row g-3">
+                <!-- Product Image Column -->
                 <div class="col-md-5 col-lg-5 order-md-first bg-light parent">
-                    <!-- Poduct image -->
+                    <!-- Product image -->
                     <img class="img-fluid mx-auto d-block"
                          alt="Responsive image"
-                         style="object-fit:cover"
                          src="{{ product.image.url }}" />
                 </div>
+                <!-- Product Info Column -->
                 <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
-                    <h1 class="mb-0 h4">
-                        <!-- Product title -->
-                        {{ product.item_title }}
-                    </h1>
+                    <!-- Product Title -->
+                    <h1 class="mb-0 h4">{{ product.item_title }}</h1>
                     <hr>
-                    <p>
-                        <!-- Product description -->
-                        {{ product.description }}
-                    </p>
+                    <!-- Product Description -->
+                    <p>{{ product.description }}</p>
+                    <!-- Price and Quantity -->
                     <div class="border">
                         <div class="col border-bottom">
                             <div class="row p-3">
@@ -39,6 +39,7 @@
                         <div class="col">
                             <div class="row p-3">
                                 <div class="col-6">
+                                    <!-- Quantity Selector for Half Dozen -->
                                     <label for="select">Half Dozen</label>
                                     &nbsp;
                                     <select id="select">
@@ -49,6 +50,7 @@
                                         <option value="4">4</option>
                                     </select>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <!-- Quantity Selector for Dozen -->
                                     <label for="select">Dozen</label>
                                     &nbsp;
                                     <select id="select">
@@ -60,6 +62,7 @@
                                     </select>
                                 </div>
                                 <div class="col-6 text-end">
+                                    <!-- Add to Cart Button -->
                                     <button type="button"
                                             id="add-button"
                                             value=""
