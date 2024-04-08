@@ -25,7 +25,7 @@ def categories(request):
     return {'all_categories': all_categories}
 
 
-def list_category(request, category_slug=None):
+def list_category(request, category_slug):
     """
     View function for listing products within a specific category.
     """

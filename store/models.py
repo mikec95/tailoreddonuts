@@ -38,7 +38,8 @@ class Product(models.Model):
                                       help_text="Price per dozen")
     description = models.TextField(
         default="", blank=True, help_text="Description of the product")
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(
+        upload_to='images/', default='images/default-image.png')
     slug = models.SlugField(max_length=50, unique=True,
                             help_text="Unique slug for URL")
 
