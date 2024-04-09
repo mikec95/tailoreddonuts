@@ -2,21 +2,27 @@
 {% load static %}
 {% block content %}
     <!-- Introduction section -->
-    <section class="py-4 text-center container" style="height:80vh;">
+    <section class="py-4 text-center"
+             style="background-color: #FEECE2;
+                    width: 100vw;
+                    height: 70vh;
+                    background: url('index_background.jpg')">
         <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto"
-                 style="justify-content: center;
-                        align-items: center">
-                <h4>Tailored Donuts Bakery</h4>
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h2>Welcome to Tailored Donuts Bakery</h2>
                 <br>
-                <p class="lead text-muted">Browse our extensive collection.</p>
+                <p class="lead text-muted">Classic gluten and dairy free baked donuts to fit your dietary needs.</p>
                 <br>
-                <a href="#" class="btn btn-primary my-2">Shop</a>
+                <a href="#shop"
+                   class="btn btn-primary my-2"
+                   style="background-color:#FFBE98;
+                          border:none;
+                          color:black">Shop</a>
             </div>
         </div>
     </section>
     <!-- All products section -->
-    <div class="album py-5 bg-light">
+    <div class="album py-5" id="shop"style="background-color:#F7DED0">
         <div class="container">
             <div class="pb-3 h5">All products</div>
             <hr>
@@ -28,7 +34,7 @@
                             <img class="img-fluid"
                                  alt="Responsive image"
                                  src="{{ product.image.url }}"
-                                 style="height:40vh;
+                                 style="height:30vh;
                                         object-fit:cover" />
                             <div class="card-body">
                                 <p class="card-text">
