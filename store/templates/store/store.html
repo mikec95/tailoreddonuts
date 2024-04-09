@@ -2,9 +2,7 @@
 {% load static %}
 {% block content %}
     <!-- Introduction section -->
-    <section class="py-4 text-center container"
-             style="height:80vh;
-                    background: url('static\index_background.jpg')">
+    <section class="py-4 text-center container" style="height:80vh;">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto"
                  style="justify-content: center;
@@ -37,8 +35,12 @@
                                     <a class="text-info text-decoration-none"
                                        href="{{ product.get_absolute_url }}">{{ product.item_title }}</a>
                                 </p>
+                                <hr />
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <h5>${{ product.half_dozen_price }}</h5>
+                                    <p>Half Dozen: ${{ product.half_dozen_price }}</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p>Dozen: ${{ product.dozen_price }}</p>
                                 </div>
                             </div>
                         </div>
