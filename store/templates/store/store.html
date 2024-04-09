@@ -2,40 +2,70 @@
 {% load static %}
 {% block content %}
     <!-- Introduction section -->
-    <section class="py-4 text-center" style="width: 100vw; height: 70vh">
+    <section class="py-4 text-center" style= "width: 100vw; height: 80vh; background: url('{% static "media/images/index_background.jpg" %}') no-repeat center center; background-size: cover; background-attachment: fixed;">
         <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h2>Welcome to Tailored Donuts Bakery</h2>
+            <div class="col-lg-6 col-md-8 mx-auto"
+                 style="background-color: rgba(0, 0, 0, 0.4);
+                        max-width: 400px;
+                        max-height: 400px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center">
+                <h2 class="text-start fw-normal" style="color: #FEECE2;">Welcome to Tailored Donuts Bakery</h2>
                 <br>
-                <p class="lead text-muted">Classic gluten and dairy free baked donuts to fit your dietary needs.</p>
+                <p class="text-start fw-lighter"
+                   style="color: #FEECE2;
+                          font-family: Arial">
+                    Enjoy our timeless selection of gluten and dairy-free baked goods, meticulously crafted to accommodate your dietary requirements. We take great pride in our role as a distinguished catering service headquartered in Middle Tennessee, serving since 2020.
+                </p>
                 <br>
-                <a href="#shop"
-                   class="btn btn-primary my-2"
-                   style="background-color:#FFBE98;
+                <a href="#about"
+                   class="btn btn-primary my-2 about-buttom"
+                   style="background-color:#F7DED0;
                           border:none;
-                          color:black">Shop</a>
+                          color:black;
+                          font-family: Arial">About</a>
             </div>
         </div>
     </section>
+    <div class="container mt-5">
+        <div class="row" id="about">
+            <div class="col-md-6">
+                <h1>Meet Taylor</h1>
+                <p>
+                    Welcome to Tailored Donuts, where taste meets health in every bite! Founded by Taylor, a lifelong lover of baking and healthy eating, our journey began in 2005 when Taylor first discovered her passion for creating mouthwatering desserts while baking alongside her family.
+                    Driven by a desire to combine her culinary skills with her newfound interest in nutrition, Taylor set out to revolutionize the world of donuts. What started as a hobby for friends and family quickly evolved into Tailored Donuts, a thriving business dedicated to crafting delicious treats with your well-being in mind.
+                </p>
+                <p>
+                    At Tailored Donuts, we prioritize quality and health without sacrificing flavor. Our donuts are made using only the finest organic, unprocessed ingredients, ensuring that each bite is both satisfying and nourishing. Say goodbye to sugar crashes and hello to guilt-free indulgence!
+                    Located in Murfreesboro, Tennessee, Tailored Donuts offers special event and pop-up donut catering services. Whether you're planning a celebration or simply craving a tasty treat, we're here to elevate your experience with our wholesome and delicious creations.
+                    Join us on a journey of flavor and wellness with Tailored Donuts. Let's make every moment sweeter – together!
+                </p>
+            </div>
+            <div class="col-md-6 float-md-right">
+                <img src=" {% static 'media/images/about-image.jpeg' %} "
+                     alt="About Me Image"
+                     class="img-fluid about-image"
+                     style="max-height:70vh;
+                            margin-bottom: 20px">
+            </div>
+        </div>
+    </div>
     <!-- All products section -->
-    <div class="album py-5" id="shop"style="background-color:#F7DED0">
+    {% comment %} <div class="album py-5" id="shop"style="background-color:#F7DED0">
         <div class="container">
-            <div class="pb-3 h5">All products</div>
+            <div class="pb-3 h5">About</div>
             <hr>
             <br>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
                 {% for product in all_products %}
                     <div class="col">
                         <div class="card shadow-sm">
-                            <img class="img-fluid"
-                                 alt="Responsive image"
-                                 src="{{ product.image.url }}"
-                                 style="height:30vh;
-                                        object-fit:cover" />
+                            <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}" style="height:30vh; object-fit:cover" />
                             <div class="card-body">
                                 <p class="card-text">
-                                    <a class="text-info text-decoration-none"
-                                       href="{{ product.get_absolute_url }}">{{ product.item_title }}</a>
+                                    <a class="text-info text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.item_title }}</a>
                                 </p>
                                 <hr />
                                 <div class="d-flex justify-content-between align-items-center">
@@ -50,5 +80,5 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
+    </div> {% endcomment %}
 {% endblock content %}

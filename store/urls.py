@@ -5,6 +5,9 @@ urlpatterns = [
     # Main Page Url
     path('', views.store_index, name='store'),
 
+    # Products page Url
+    path('product/', views.list_category, name='products'),
+
     # Individual Product Url
     path('product/<slug:product_slug>',
          views.product_info, name='product-info'),

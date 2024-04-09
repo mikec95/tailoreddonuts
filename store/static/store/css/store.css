@@ -1,1 +1,14 @@
-
+body {
+  font-family: "Times New Roman";
+  overflow-x: hidden;
+}
+.card-image {
+  height: 28vh;
+  object-fit: cover;
+}
+.about-button {
+  background-color: #f7ded0;
+  border: none;
+  color: black;
+  font-family: Arial;
+}
