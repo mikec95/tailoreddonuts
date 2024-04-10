@@ -8,7 +8,8 @@ import store
 urlpatterns = [
     # Admin site URL
     path('admin/', admin.site.urls),
-    path('', include('store.urls'))
+    path('', include('store.urls')),
+    path('contact/', include('contact.urls', namespace='contact'))
 ]
 
 # Serve media files during development
