@@ -5,8 +5,8 @@ urlpatterns = [
     # Main Page Url
     path('', views.store_index, name='store'),
 
-    # Products page Url
-    path('product/', views.list_category, name='products'),
+    # Inquiry page Url
+    path('inquiry/', views.inquiry_form, name='inquiry_url'),
 
     # Individual Product Url
     path('product/<slug:product_slug>',
