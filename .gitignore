@@ -2,5 +2,5 @@ store/workspace.code-workspace
 store/__pycache__/
 */__pycache__/
 db.sqlite3
-__pycache__/*
+__pycache__/
 ecommerce/__pycache__/
