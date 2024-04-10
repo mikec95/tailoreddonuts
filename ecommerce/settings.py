@@ -30,7 +30,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'store',  # django app
+    'store',
+    'contact',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,7 +57,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'templates',  # Project templates directory
-            BASE_DIR / 'store/templates',  # App templates directory
+            BASE_DIR / 'store/templates',  # Store templates directory
+            BASE_DIR / 'contact/templates'  # Contact templates directory
         ],
         'APP_DIRS': True,
         'OPTIONS': {
