@@ -47,3 +47,10 @@ def product_info(request, product_slug):
     context = {'product': product}
     # Render the HTML template with the provided context
     return render(request, 'store/product-info.html', context=context)
+
+
+def inquiry_form(request):
+    """
+    view function for displaying the Inquiry Form
+    """
+    return render(request, 'store/inquiry-form.html')
