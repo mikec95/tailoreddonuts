@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name = 'store'
+
 urlpatterns = [
     # Main Page Url
     path('', views.store_index, name='store'),
