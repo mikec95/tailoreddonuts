@@ -1,4 +1,5 @@
 {% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 <!-- This is a navigation bar (navbar) using Bootstrap's navbar component -->
 <nav class="navbar navbar-expand-lg bg-primary"
      style="background-color:#F7DED0 !important"
@@ -6,13 +7,10 @@
     <div class="container-fluid">
         <!-- Container to hold the navbar content -->
         <a class="navbar-brand d-lg-none" href="{% url 'store:store' %}">  <!-- Show only on mobile (hidden on lg and larger screens) -->
-            <img src="{% static 'media/images/navbar_logo_modified.png' %}"
-                 style="max-height: 60px">
+            <img src="{% static 'media/images/navbar_logo_modified.png' %}">
         </a>
         <a class="navbar-brand d-none d-lg-block" href="{% url 'store:store' %}">
-            <img height="60px"
-                 src="{% static 'media/images/navbar_logo_modified.png' %}"
-                 style="max-height: 60px">
+            <img src="{% static 'media/images/navbar_logo_modified.png' %}">
         </a>
         <button class="navbar-toggler"
                 type="button"
@@ -28,53 +26,19 @@
              style="background-color: #F7DED0 !important">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active"
-                       style="color:#452c22;
-                              font-family: Arial;
-                              transition: color 0.3s ease"
-                       onmouseover="this.style.color='#FFBE98';"
-                       onmouseout="this.style.color='#452c22';"
-                       href="{% url 'store:store' %}">Home</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'store:store' %}">Home</a>
                 </li>
-                <hr>
                 <li class="nav-item">
-                    <a class="nav-link"
-                       style="color:#452c22;
-                              font-family: Arial;
-                              transition: color 0.3s ease"
-                       onmouseover="this.style.color='#FFBE98';"
-                       onmouseout="this.style.color='#452c22';"
-                       href="{% url 'contact:contact_url' %}">Inquiry</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Inquiry</a>
                 </li>
-                <hr>
                 <li class="nav-item">
-                    <a class="nav-link"
-                       style="color:#452c22;
-                              font-family: Arial;
-                              transition: color 0.3s ease"
-                       onmouseover="this.style.color='#FFBE98';"
-                       onmouseout="this.style.color='#452c22';"
-                       href="{% url 'contact:contact_url' %}">Menu</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Menu</a>
                 </li>
-                <hr>
                 <li class="nav-item">
-                    <a class="nav-link"
-                       style="color:#452c22;
-                              font-family: Arial;
-                              transition: color 0.3s ease"
-                       onmouseover="this.style.color='#FFBE98';"
-                       onmouseout="this.style.color='#452c22';"
-                       href="{% url 'contact:contact_url' %}">Gallery</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Gallery</a>
                 </li>
-                <hr>
                 <li class="nav-item">
-                    <a class="nav-link"
-                       style="color:#452c22;
-                              font-family: Arial;
-                              transition: color 0.3s ease"
-                       onmouseover="this.style.color='#FFBE98';"
-                       onmouseout="this.style.color='#452c22';"
-                       href="{% url 'contact:contact_url' %}">Contact</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Contact</a>
                 </li>
             </ul>
         </div>
