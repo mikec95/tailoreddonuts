@@ -28,9 +28,9 @@
         </div>
     </section>
     <div class="container mt-5">
-        <div class="row" id="about">
+        <div class="row">
             <div class="col-md-6">
-                <h1>about.</h1>
+                <h1>About.</h1>
                 <p>
                     Welcome to Tailored Donuts, where taste meets health in every bite! Founded by Taylor, a lifelong lover of baking and healthy eating, our journey began in 2005 when Taylor first discovered her passion for creating mouthwatering desserts while baking alongside her family. Driven by a desire to combine her culinary skills with her newfound interest in nutrition, Taylor set out to revolutionize the world of donuts. What started as a hobby for friends and family quickly evolved into Tailored Donuts, a thriving business dedicated to crafting delicious treats with your well-being in mind.
                 </p>
@@ -40,33 +40,4 @@
             </div>
         </div>
     </div>
-    <!-- All products section -->
-    {% comment %} <div class="album py-5" id="shop"style="background-color:#F7DED0">
-        <div class="container">
-            <div class="pb-3 h5">About</div>
-            <hr>
-            <br>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-                {% for product in all_products %}
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}" style="height:30vh; object-fit:cover" />
-                            <div class="card-body">
-                                <p class="card-text">
-                                    <a class="text-info text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.item_title }}</a>
-                                </p>
-                                <hr />
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p>Half Dozen: ${{ product.half_dozen_price }}</p>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <p>Dozen: ${{ product.dozen_price }}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div> {% endcomment %}
 {% endblock content %}
