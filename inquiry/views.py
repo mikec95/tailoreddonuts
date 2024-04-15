@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-def inquiry(request):
+def inquiry_form(request):
     """
     view function for displaying the Inquiry Form
     """
