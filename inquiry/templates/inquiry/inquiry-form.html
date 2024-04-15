@@ -9,34 +9,79 @@
         <div class="alert alert-warning disclaimer" role="alert">
             <strong>Disclaimer:</strong> Please note that not all requests may be approved. Our team will review each inquiry carefully, but we cannot guarantee approval for every request.
         </div>
-        <hr>
         <form>
             <div class="form-group">
-                <p>
-                    <input type="tel"
-                           class="form-control"
-                           id="contact"
-                           placeholder=" "
-                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                           title="Enter a valid phone number (XXX-XXX-XXXX)"
-                           required />
-                    <label for="contact" class="input-label required-field">Phone Number</label>
-                </p>
+                <h4>Contact Information</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="first-name"
+                                   placeholder=" "
+                                   required />
+                            <label for="first-name" class="input-label required-field">First Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="last-name"
+                                   placeholder=" "
+                                   required />
+                            <label for="last-name" class="input-label required-field">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="tel"
+                                   class="form-control"
+                                   id="contact"
+                                   placeholder=" "
+                                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                   title="Enter a valid phone number (XXX-XXX-XXXX)" />
+                            <label for="contact" class="input-label">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text"
+                                   class="form-control"
+                                   id="company-name"
+                                   placeholder=" "
+                                   required />
+                            <label for="company-name" class="input-label">Company Name (if applicable)</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <p>
-                    <input class="form-control"
-                           type="number"
-                           id="quantity"
-                           name="quantity"
-                           min="1"
-                           max="200"
-                           placeholder=" "
-                           required />
-                    <label for="quantity" class="input-label required-field">Number of Guests</label>
-                </p>
+            <hr>
+            <h4>Event Details</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control"
+                               id="quantity"
+                               placeholder=" "
+                               width="80px"
+                               required />
+                        <label for="quantity" class="input-label required-field">Number of Guests</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control datepicker"
+                               id="event-date"
+                               placeholder=" "
+                               required />
+                        <label for="event-date" class="input-label required-field">Event Date (MM/DD/YYYY)</label>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary submit-button">Submit</button>
+            <button type="submit" class="btn btn-primary submit-button">Send</button>
         </form>
     </div>
 {% endblock content %}
