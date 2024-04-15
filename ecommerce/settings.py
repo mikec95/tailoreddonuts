@@ -123,7 +123,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [BASE_DIR / 'static', BASE_DIR / 'store/static']
+STATICFILES_DIRS = [BASE_DIR / 'static', BASE_DIR /
+                    'store/static', BASE_DIR / 'contact/static']
 
 
 MEDIA_URL = '/media/'
