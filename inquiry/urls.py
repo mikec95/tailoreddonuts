@@ -1,9 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = 'booking'
+app_name = 'inquiry'
 
 urlpatterns = [
     # Inquiry page Url
-    path('', views.booking_form, name='booking_url'),
+    path('', views.inquiry_form, name='inquiry_url'),
 ]

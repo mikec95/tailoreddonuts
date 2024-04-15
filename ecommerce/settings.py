@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'home',
-    'booking',
+    'inquiry',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +58,7 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'templates',  # Project templates directory
             BASE_DIR / 'home/templates',  # Home templates directory
-            BASE_DIR / 'booking/templates'  # Booking templates directory
+            BASE_DIR / 'inquiry/templates'  # Inquiry templates directory
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'static', BASE_DIR /
-                    'home/static', BASE_DIR / 'booking/static']
+                    'home/static', BASE_DIR / 'inquiry/static']
 
 
 MEDIA_URL = '/media/'
