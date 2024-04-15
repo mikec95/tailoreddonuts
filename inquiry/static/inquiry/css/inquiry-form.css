@@ -1,13 +1,15 @@
+/* General Styles */
 .form-container {
   padding: 20px;
-}
-h1 {
-  color: #452c22;
-}
-form {
   font-family: Arial;
   color: #452c22;
-  width: 75%;
+}
+.form-container input {
+  width: 80vw;
+}
+h1 {
+  font-family: "Times New Roman";
+  color: #452c22;
 }
 .required-field::before {
   content: "*";
@@ -15,27 +17,85 @@ form {
   margin-left: 2px;
 }
 
-.thin-horizontal-line {
-  border-top: 1px solid;
-  color: #452c22;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background: linear-gradient(to right, transparent, #452c22, transparent);
+/* Form Styling */
+form {
+  width: 75%;
 }
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="number"]:focus,
-textarea:focus,
-select:focus {
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid #452c22;
+}
+
+/* Input and Label Styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  max-width: 80vw;
+  padding: 10px;
   border: none;
-  border-color: #ffbe98; /* Change the border color as desired */
+  border-color: #452c22; /* Change the border color as desired */
   box-shadow: 0 0 5px #452c22; /* Change the box shadow as desired */
   outline: none; /* Remove default outline */
 }
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #452c22; /* Change the border color as desired */
+  box-shadow: 0 0 5px #452c22; /* Change the box shadow as desired */
+}
+.submit-button {
+  background-color: #f7ded0;
+  border-width: 1px;
+  color: #242424;
+  font-family: Arial;
+  border-color: #452c22;
+  transition: #f7ded0 0.3s, color 0.3s; /* Smooth transition effect */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.submit-button:hover {
+  background-color: #f7ded0;
+  color: #242424;
+}
+.submit-button:active {
+  background-color: #f7ded0;
+  color: #452c22;
+}
+/* Label Animation */
+label {
+  color: #452c22;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  opacity: 0.75;
+  background: white;
+}
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  border-color: #452c22;
+  opacity: 1;
+  transform: scale(0.75) translateY(-70%) translateX(-14px);
+}
+
+/* Additional Styling */
+p {
+  margin: 20px 0;
+  position: relative;
+  display: inline-block;
+}
+.disclaimer {
+  background-color: #f7ded0;
+  color: #452c22;
 }

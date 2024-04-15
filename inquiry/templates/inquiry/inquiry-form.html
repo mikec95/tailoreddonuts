@@ -6,33 +6,37 @@
 {% block content %}
     <div class="container form-container">
         <h1>Inquiry.</h1>
-        <hr class="thin-horizontal-line" />
+        <div class="alert alert-warning disclaimer" role="alert">
+            <strong>Disclaimer:</strong> Please note that not all requests may be approved. Our team will review each inquiry carefully, but we cannot guarantee approval for every request.
+        </div>
+        <hr>
         <form>
             <div class="form-group">
-                <label for="exampleInputEmail1" class="required-field">Contact details of the person ordering</label>
-                <input type="tel"
-                       class="form-control"
-                       id="phone"
-                       placeholder="Phone Number"
-                       pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                       title="Enter a valid phone number (XXX-XXX-XXXX)"
-                       required />
-                <!-- Optional: Add a small text below the input for additional instructions or validation messages -->
-                <small id="phoneHelp" class="form-text text-muted">Enter your phone number in the format XXX-XXX-XXXX.</small>
-                <div class="invalid-feedback">Please enter a valid phone number in the format XXX-XXX-XXXX.</div>
+                <p>
+                    <input type="tel"
+                           class="form-control"
+                           id="contact"
+                           placeholder=" "
+                           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                           title="Enter a valid phone number (XXX-XXX-XXXX)"
+                           required />
+                    <label for="contact" class="input-label required-field">Phone Number</label>
+                </p>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1" class="required-field">Number of Guests</label>
-                <input class="form-control"
-                       type="number"
-                       id="quantity"
-                       name="quantity"
-                       min="1"
-                       max="200"
-                       placeholder="Number of people being catered for"
-                       required>
+                <p>
+                    <input class="form-control"
+                           type="number"
+                           id="quantity"
+                           name="quantity"
+                           min="1"
+                           max="200"
+                           placeholder=" "
+                           required />
+                    <label for="quantity" class="input-label required-field">Number of Guests</label>
+                </p>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary submit-button">Submit</button>
         </form>
     </div>
 {% endblock content %}
