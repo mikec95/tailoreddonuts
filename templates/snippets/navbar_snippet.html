@@ -6,11 +6,11 @@
      data-bs-theme="dark">
     <div class="container-fluid">
         <!-- Container to hold the navbar content -->
-        <a class="navbar-brand d-lg-none" href="{% url 'store:store' %}">  <!-- Show only on mobile (hidden on lg and larger screens) -->
+        <a class="navbar-brand d-lg-none" href="{% url 'home:home' %}">  <!-- Show only on mobile (hidden on lg and larger screens) -->
             <img class="navbar-logo"
                  src="{% static 'media/images/navbar_logo_modified.png' %}">
         </a>
-        <a class="navbar-brand d-none d-lg-block" href="{% url 'store:store' %}">
+        <a class="navbar-brand d-none d-lg-block" href="{% url 'home:home' %}">
             <img class="navbar-logo"
                  src="{% static 'media/images/navbar_logo_modified.png' %}">
         </a>
@@ -28,19 +28,19 @@
              style="background-color: #F7DED0 !important">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'store:store' %}">Home</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'home:home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Inquiry</a>
+                    <a class="nav-link navbar-anchor" href="{% url 'booking:booking_url' %}">Booking</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Menu</a>
+                    <a class="nav-link navbar-anchor" href="#">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Gallery</a>
+                    <a class="nav-link navbar-anchor" href="#">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'contact:contact_url' %}">Contact</a>
+                    <a class="nav-link navbar-anchor" href="#">Contact</a>
                 </li>
             </ul>
         </div>

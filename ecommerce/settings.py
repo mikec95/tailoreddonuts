@@ -30,8 +30,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'store',
-    'contact',
+    'home',
+    'booking',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,8 +57,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             BASE_DIR / 'templates',  # Project templates directory
-            BASE_DIR / 'store/templates',  # Store templates directory
-            BASE_DIR / 'contact/templates'  # Contact templates directory
+            BASE_DIR / 'home/templates',  # Home templates directory
+            BASE_DIR / 'booking/templates'  # Booking templates directory
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'store.views.categories',
+                'home.views.categories',
             ],
         },
     },
@@ -124,7 +124,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'static', BASE_DIR /
-                    'store/static', BASE_DIR / 'contact/static']
+                    'home/static', BASE_DIR / 'booking/static']
 
 
 MEDIA_URL = '/media/'

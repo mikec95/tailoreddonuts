@@ -1,0 +1,40 @@
+body {
+  font-family: "Times New Roman";
+  overflow-x: hidden;
+}
+.card-image {
+  height: 28vh;
+  object-fit: cover;
+}
+.about-button {
+  background-color: #f7ded0;
+  border: none;
+  color: #242424;
+  font-family: Arial;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+
+  /* Add padding and border-radius for better appearance */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Hover effect */
+.about-button:hover {
+  background-color: #f7ded0;
+  color: #242424;
+}
+.about-button:active {
+  background-color: #f7ded0;
+  color: #242424;
+}
+.about-image {
+  max-height: 50vh;
+  border-radius: 10%;
+  float: right;
+}
+.intro-section {
+  width: 100vw;
+  height: 78vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
