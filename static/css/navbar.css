@@ -1,11 +1,13 @@
 .navbar-logo {
   max-height: 60px;
 }
+
 .navbar-anchor {
   color: #452c22;
   font-family: Arial;
   transition: color 0.3s ease;
 }
+
 .navbar-anchor:hover {
   color: #ffbe98;
 }

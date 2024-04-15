@@ -1,3 +1,41 @@
 .form-container {
-  padding-top: 20px;
+  padding: 20px;
+}
+h1 {
+  color: #452c22;
+}
+form {
+  font-family: Arial;
+  color: #452c22;
+  width: 75%;
+}
+.required-field::before {
+  content: "*";
+  color: rgb(132, 28, 28);
+  margin-left: 2px;
+}
+
+.thin-horizontal-line {
+  border-top: 1px solid;
+  color: #452c22;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, transparent, #452c22, transparent);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border: none;
+  border-color: #ffbe98; /* Change the border color as desired */
+  box-shadow: 0 0 5px #452c22; /* Change the box shadow as desired */
+  outline: none; /* Remove default outline */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
