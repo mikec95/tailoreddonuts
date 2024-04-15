@@ -1,8 +1,7 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
 <!-- This is a navigation bar (navbar) using Bootstrap's navbar component -->
-<nav class="navbar navbar-expand-lg bg-primary"
-     style="background-color:#F7DED0 !important"
+<nav class="navbar navbar-expand-lg bg-primary navbar-container"
      data-bs-theme="dark">
     <div class="container-fluid">
         <!-- Container to hold the navbar content -->
@@ -23,9 +22,7 @@
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="navbar-collapse collapse"
-             id="navbarColor01"
-             style="background-color: #F7DED0 !important">
+        <div class="navbar-collapse collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
                     <a class="nav-link navbar-anchor" href="{% url 'home:home' %}">Home</a>

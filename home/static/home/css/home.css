@@ -38,6 +38,18 @@ body {
   color: #feece2;
   font-family: Arial;
 }
+.about-button {
+  background-color: #f7ded0;
+  border: none;
+  color: #242424;
+  font-family: Arial;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+
+  /* Add padding and border-radius for better appearance */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 .card-image {
   height: 28vh;
   object-fit: cover;
@@ -50,18 +62,6 @@ body {
 .about-container {
   height: 100vh;
   width: 100vw;
-  background-color: #f7ded0;
-}
-.about-button {
-  background-color: #f7ded0;
-  border: none;
-  color: #242424;
-  font-family: Arial;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
-
-  /* Add padding and border-radius for better appearance */
-  padding: 10px 20px;
-  border-radius: 5px;
 }
 
 /* Hover effect */
