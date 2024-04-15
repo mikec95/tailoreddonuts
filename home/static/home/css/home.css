@@ -2,9 +2,49 @@ body {
   font-family: "Times New Roman";
   overflow-x: hidden;
 }
+
+/* parent container for the first section on the home page */
+.welcome-container {
+  background: url("../../../../static/media/images/index_background.jpg")
+    no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* First row under the welcome container */
+.welcome-row {
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Column on the parent container of the top section. Includes opaque background and welcome blurb */
+.welcome-column {
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.welcome-column h1 {
+  font-weight: 500;
+  color: #feece2;
+}
+.welcome-column p {
+  color: #feece2;
+  font-family: Arial;
+}
 .card-image {
   height: 28vh;
   object-fit: cover;
+}
+.home-page-logo {
+  max-height: 200px;
+  max-width: 200px;
 }
 .about-button {
   background-color: #f7ded0;
@@ -31,10 +71,4 @@ body {
   max-height: 50vh;
   border-radius: 10%;
   float: right;
-}
-.intro-section {
-  width: 100vw;
-  height: 78vh;
-  background-size: cover;
-  background-attachment: fixed;
 }
