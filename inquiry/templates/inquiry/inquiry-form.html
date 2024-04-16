@@ -11,7 +11,7 @@
         </div>
         <form>
             <div class="form-group">
-                <h4>Contact Information</h4>
+                <h5>Contact Information</h5>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -40,24 +40,20 @@
                                    id="contact"
                                    placeholder=" "
                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                   title="Enter a valid phone number (XXX-XXX-XXXX)" />
+                                   title="Enter a valid phone number: XXX-XXX-XXXX" />
                             <label for="contact" class="input-label">Phone Number</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text"
-                                   class="form-control"
-                                   id="company-name"
-                                   placeholder=" "
-                                   required />
+                            <input type="text" class="form-control" id="company-name" placeholder=" " />
                             <label for="company-name" class="input-label">Company Name (if applicable)</label>
                         </div>
                     </div>
                 </div>
             </div>
             <hr>
-            <h4>Event Details</h4>
+            <h5>Event Details</h5>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -73,9 +69,10 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <input type="text"
-                               class="form-control datepicker"
+                               class="form-control"
                                id="event-date"
                                placeholder=" "
+                               pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}"
                                required />
                         <label for="event-date" class="input-label required-field">Event Date (MM/DD/YYYY)</label>
                     </div>

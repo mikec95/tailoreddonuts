@@ -52,38 +52,39 @@ select:focus {
 }
 .submit-button {
   background-color: #f7ded0;
-  border-width: 1px;
-  color: #242424;
+  color: #452c22;
   font-family: Arial;
-  border-color: #452c22;
   transition: #f7ded0 0.3s, color 0.3s; /* Smooth transition effect */
   padding: 10px 20px;
   border-radius: 5px;
+  border: none;
 }
-.submit-button:hover {
-  background-color: #f7ded0;
-  color: #242424;
-}
-.submit-button:active {
+.submit-button:hover,
+.submit-button:active,
+.submit-button:focus,
+.submit-button:visited,
+.submit-button:target {
   background-color: #f7ded0;
   color: #452c22;
+  border: none;
 }
 /* Label Animation */
 label {
   color: #452c22;
   pointer-events: none;
   position: absolute;
-  left: 0;
   top: 0;
   transition: opacity 0.2s, transform 0.2s;
   opacity: 0.75;
   background: white;
+  font-size: small;
 }
 input:focus + label,
 input:not(:placeholder-shown) + label {
   border-color: #452c22;
   opacity: 1;
   transform: scale(0.75) translateY(-70%) translateX(-14px);
+  font-size: small;
 }
 
 /* Additional Styling */
