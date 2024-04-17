@@ -66,6 +66,18 @@
                         // Update the input field value with the formatted value
                         e.target.value = inputValue;
                         });
+
+                        // Event listener for the 'pickup-date' input field
+                        document.getElementById('delivery-date').addEventListener('input', function(e) {
+                              // Remove non-numeric characters from the input value
+                              let inputValue = e.target.value.replace(/[^\d]/g, '');
+                        
+                              // Format the input value as MM/DD/YYYY
+                              inputValue = inputValue.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1 / $2 / $3');
+                        
+                              // Update the input field value with the formatted value
+                              e.target.value = inputValue;
+                              });
                   
                         // Event listener for the 'pickup-date' input field
                         document.getElementById('pickup-date').addEventListener('input', function(e) {
@@ -73,7 +85,7 @@
                         let inputValue = e.target.value.replace(/[^\d]/g, '');
                   
                         // Format the input value as MM/DD/YYYY
-                        inputValue = inputValue.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1/$2/$3');
+                        inputValue = inputValue.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1 / $2 / $3');
                   
                         // Update the input field value with the formatted value
                         e.target.value = inputValue;
@@ -85,7 +97,7 @@
                         let inputValue = e.target.value.replace(/[^\d]/g, '');
                   
                         // Format the input value as MM/DD/YYYY
-                        inputValue = inputValue.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1/$2/$3');
+                        inputValue = inputValue.replace(/^(\d{2})(\d{2})(\d{4})$/, '$1 / $2 / $3');
                   
                         // Update the input field value with the formatted value
                         e.target.value = inputValue;

@@ -4,12 +4,12 @@
     <link rel="stylesheet" href="{% static 'inquiry/css/inquiry-form.css' %}" />
 {% endblock cssfiles %}
 {% block content %}
-    <div class="container form-container">
-        <h1>Inquiry</h1>
-        <div class="alert alert-warning disclaimer" role="alert">
-            <strong>Disclaimer:</strong> Please note that not all requests may be approved. Our team will review each inquiry carefully, but we cannot guarantee approval for every request.
-        </div>
+    <div class="container form-container d-flex justify-content-center">
         <form>
+            <h1>Inquiry</h1>
+            <div class="alert alert-warning disclaimer" role="alert">
+                <strong>Disclaimer:</strong> Please note that not all requests may be approved. Our team will review each inquiry carefully, but we cannot guarantee approval for every request.
+            </div>
             <div class="form-group">
                 <h5>Contact Information</h5>
                 <div class="row">
@@ -36,7 +36,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <select class="form-control" id="best-time" placeholder=" " name="best-time">
-                                <option value="" selected disabled>--Preffered Contact Time--</option>
+                                <option value="" selected disabled style="font-size: smaller">Preferred Contact Time</option>
                                 <option value="morning">Morning</option>
                                 <option value="afternoon">Afternoon</option>
                                 <option value="evening">Evening</option>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <hr>
+                <br>
                 <h5>Event Details</h5>
                 <div class="row">
                     <div class="col-md-3">
@@ -79,7 +79,6 @@
                                    class="form-control"
                                    id="event-date"
                                    placeholder=" "
-                                   pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}"
                                    required />
                             <label for="event-date" class="required-field">Event Date (MM/DD/YYYY)</label>
                         </div>
@@ -120,7 +119,6 @@
                                        class="form-control"
                                        id="pickup-date"
                                        placeholder=" "
-                                       pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}"
                                        required />
                                 <label for="pickup-date" class="required-field">Pick Up Date (MM/DD/YYYY)</label>
                             </div>
@@ -135,7 +133,6 @@
                                        class="form-control"
                                        id="delivery-date"
                                        placeholder=" "
-                                       pattern="(0[1-9]|1[0-2])\/(0[1-9]|[12][0-9]|3[01])\/\d{4}"
                                        required />
                                 <label for="delivery-date" class="required-field">Delivery Date (MM/DD/YYYY)</label>
                             </div>
@@ -156,6 +153,14 @@
                     </div>
                 </div>
             </div>
+            <br>
+            <h5>Special Requests</h5>
+            <div class="row">
+                <div class="col w-100">
+                    <textarea class="form-control"></textarea>
+                </div>
+            </div>
+            <br>
             <button type="submit" class="btn btn-primary submit-button">Send</button>
         </form>
     </div>
