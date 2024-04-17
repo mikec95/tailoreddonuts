@@ -33,10 +33,10 @@ input[type="number"],
 textarea,
 select {
   max-width: 80vw;
-  padding: 10px;
+  padding-left: 10px;
   border: none;
   border-color: #452c22; /* Change the border color as desired */
-  box-shadow: 0 0 5px #452c22; /* Change the box shadow as desired */
+  box-shadow: 0 0 2px #452c22; /* Change the box shadow as desired */
   outline: none; /* Remove default outline */
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -44,11 +44,17 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+input:active,
 input:focus,
 textarea:focus,
-select:focus {
-  border-color: #452c22; /* Change the border color as desired */
-  box-shadow: 0 0 5px #452c22; /* Change the box shadow as desired */
+textarea:active,
+select:focus,
+select:active,
+.form-control:focus,
+.form-control:active {
+  outline-width: 1px;
+  outline-color: #452c22; /* Change the border color as desired */
 }
 .submit-button {
   background-color: #f7ded0;
@@ -96,4 +102,11 @@ p {
 .disclaimer {
   background-color: #f7ded0;
   color: #452c22;
+}
+.form-control#best-time option {
+  font-size: 1rem;
+}
+.form-check-input:checked {
+  background-color: #f7ded0;
+  border-color: #452c22;
 }
