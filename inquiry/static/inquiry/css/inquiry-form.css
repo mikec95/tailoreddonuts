@@ -81,7 +81,9 @@ label {
   transition: opacity 0.2s, transform 0.2s;
   opacity: 0.75;
   background: white;
-  font-size: small;
+  font-size: x-small;
+  padding-left: 3px;
+  padding-top: 3px;
 }
 input:focus + label,
 input:not(:placeholder-shown) + label {

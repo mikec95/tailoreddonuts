@@ -9,7 +9,8 @@ urlpatterns = [
     # Admin site URL
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('inquiry/', include('inquiry.urls', namespace='inquiry'))
+    path('inquiry/', include('inquiry.urls', namespace='inquiry')),
+    path('menu/', include('menu.urls', namespace='menu'))
 ]
 
 # Serve media files during development
