@@ -1,0 +1,14 @@
+/* General Styles */
+.form-container {
+  padding: 20px;
+  font-family: Arial;
+  color: #452c22;
+}
+h1 {
+  font-family: "Times New Roman";
+  color: #452c22;
+}
+.disclaimer {
+  background-color: #f7ded0;
+  color: #452c22;
+}
