@@ -1,22 +1,33 @@
+:root {
+  --text-color: #452c22;
+  --light-bg: #feece2;
+  --button-bg: #f7ded0;
+}
+
 /* General Styles */
 .form-container {
   padding: 20px;
   font-family: Arial;
   color: #452c22;
+  width: 60%;
 }
 h1 {
   font-family: "Times New Roman";
   color: #452c22;
 }
+.required-field {
+  background-color: #f7ded0;
+}
+
 .required-field::before {
   content: "*";
-  color: rgb(132, 28, 28);
+  color: #452c22;
   margin-left: 2px;
 }
 
 /* Form Styling */
 form {
-  width: 75%;
+  min-width: 75%;
 }
 hr {
   margin-top: 1rem;
@@ -27,33 +38,32 @@ hr {
 
 /* Input and Label Styling */
 input[type="text"],
-input[type="email"],
 input[type="tel"],
-input[type="number"],
+input[type="radio"],
 textarea,
-select {
+.form-input {
+  background-color: #f7ded0;
+  border: none; /* Remove all borders */
+  border-bottom: 1px solid #452c22; /* Only keep the bottom border */
+  outline: none;
   max-width: 80vw;
   padding-left: 10px;
-  box-shadow: 0 0 2px #452c22; /* Change the box shadow as desired */
-  outline: none; /* Remove default outline */
 }
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input:active,
-input:focus,
-textarea:focus,
-textarea:active,
-select:focus,
-select:active,
-.form-control:focus,
-.form-control:active {
+.form-input:focus,
+.form-input:active {
+  border: none; /* Remove all borders */
+  border-bottom: 1px solid #452c22; /* Only keep the bottom border */
   outline: none;
-  border-color: #452c22;
+  background-color: #f7ded0;
 }
+
 .submit-button {
   background-color: #f7ded0;
   color: #452c22;
@@ -63,6 +73,7 @@ select:active,
   border-radius: 5px;
   border: none;
 }
+
 .submit-button:hover,
 .submit-button:active,
 .submit-button:focus,
@@ -72,23 +83,25 @@ select:active,
   color: #452c22;
   border: none;
 }
+
 /* Label Animation */
 label {
+  background-color: #f7ded0;
   color: #452c22;
   pointer-events: none;
   position: absolute;
   top: 0;
   transition: opacity 0.2s, transform 0.2s;
   opacity: 0.75;
-  background: white;
+  background: #f7ded0;
   font-size: x-small;
   padding-left: 3px;
   padding-top: 3px;
 }
+
 input:focus + label,
 input:not(:placeholder-shown) + label {
-  outline: none !important;
-  border-color: #452c22;
+  background-color: #f7ded0;
   opacity: 1;
   transform: scale(0.75) translateY(-70%) translateX(-14px);
   font-size: small;
@@ -104,14 +117,23 @@ p {
   background-color: #f7ded0;
   color: #452c22;
 }
+select:hover {
+  cursor: pointer;
+}
+
 .form-control#best-time option {
   font-size: small;
 }
 .form-check-input:checked {
-  background-color: #f7ded0;
+  background-color: red;
   border-color: #452c22;
 }
 textarea {
   resize: none;
   height: 25vh !important;
+}
+
+.form-section {
+  background-color: #f7ded0;
+  padding: 20px;
 }
