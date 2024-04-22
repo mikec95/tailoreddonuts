@@ -8,8 +8,10 @@
         <form>
             <h1>Inquiry</h1>
             <div class="alert alert-warning disclaimer" role="alert">
-                <strong>Disclaimer:</strong> We want to let you know that while we review every request with care, not all of them may be approved. Our team works diligently to consider each inquiry, but approval isn't guaranteed for every request.
+                <strong>Disclaimer:</strong> Our team reviews each request carefully, but approval isn't guaranteed. Due to limited staffing, we can only accept 1-2 orders per month.
             </div>
+            <br>
+            <br>
             <div class="form-group">
                 <div class="form-section">
                     <div class="row">
@@ -73,8 +75,8 @@
                 </div>
                 <br>
                 <div class="form-section">
-                    <h5>Event Details</h5>
-                    <div class="row form-section">
+                    <div class="row">
+                        <h5>Event Details</h5>
                         <div class="col-md-8 offset-md-4">
                             <div class="form-group">
                                 <input type="text"
@@ -116,7 +118,7 @@
                             </div>
                         </div>
                         <div class="col-md-8 offset-md-4">
-                            <div class="form-check form-check-inline ms-5">
+                            <div class="form-check form-check-inline">
                                 <input class="form-check-input"
                                        type="radio"
                                        name="pickup-delivery"
@@ -133,55 +135,66 @@
                                 <label class="form-check-label" for="delivery" style="font-size: large;">Delivery</label>
                             </div>
                         </div>
-                        <div class="col-md-8 offset-md-4"
+                        <div class="col-md-8 offset-md-4 form-group"
                              id="pickup-details"
                              style="display: none">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text"
-                                           class="form-control form-input"
-                                           id="pickup-name"
-                                           placeholder=" "
-                                           required />
-                                    <label for="pickup-name" class="required-field">Who is Picking Up</label>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 ">
+                                    <div clas="form-group">
+                                        <input type="text"
+                                               class="form-control form-input"
+                                               id="pickup-name"
+                                               placeholder=" "
+                                               required />
+                                        <label for="pickup-name" class="required-field">Who is Picking Up</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text"
-                                           class="form-control form-input"
-                                           id="pickup-date"
-                                           placeholder=" "
-                                           required />
-                                    <label for="pickup-date" class="required-field">Pick Up Date (MM/DD/YYYY)</label>
+                                <br>
+                                <br>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text"
+                                               class="form-control form-input"
+                                               id="pickup-date"
+                                               placeholder=" "
+                                               required />
+                                        <label for="pickup-date" class="required-field">Pick Up Date (MM/DD/YYYY)</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row-md-8 offset-md-4 form-group"
+                        <div class="col-md-8 offset-md-4 form-group"
                              id="delivery-details"
                              style="display: none">
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text"
-                                           class="form-control form-input"
-                                           id="delivery-date"
-                                           placeholder=" "
-                                           required />
-                                    <label for="delivery-date" class="required-field">Delivery Date (MM/DD/YYYY)</label>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text"
+                                               class="form-control form-input"
+                                               id="delivery-date"
+                                               placeholder=" "
+                                               required>
+                                        <label for="delivery-date" class="required-field">Delivery Date (MM/DD/YYYY)</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-sm-12 col-md-6">
+                                    <div class="form-group">
+                                        <input type="text"
+                                               class="form-control form-input"
+                                               id="delivery-address"
+                                               placeholder=" "
+                                               required>
+                                        <label for="delivery-address" class="required-field">Delivery Address</label>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <input type="text"
-                                           class="form-control form-input"
-                                           id="delivery-address"
-                                           placeholder=" "
-                                           required />
-                                    <label for="delivery-address" class="required-field">Delivery Address</label>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="large" style="color:#452c22">
+                                        <strong><i>Delivery cost is calculated by mileage</i></strong>
+                                    </p>
                                 </div>
-                            </div>
-                            <div class="col w-100 h-2">
-                                <p class="large" style="color:#452c22">*Delivery cost is calculated by mileage</p>
                             </div>
                         </div>
                     </div>
@@ -193,7 +206,7 @@
                         <div class="col offset-md-4">
                             <div class="form-group">
                                 <input type="text"
-                                       class="form-control form-input"
+                                       class="form-control"
                                        id="special-requests"
                                        placeholder=" " />
                             </div>
