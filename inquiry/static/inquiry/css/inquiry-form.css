@@ -1,87 +1,99 @@
+/* GLOBAL */
 :root {
   --text-color: #452c22;
   --light-bg: #feece2;
   --button-bg: #f7ded0;
+  --body-bg: #f9f9f9;
+  --form-section-bg: #fbf7f5;
 }
-
-/* General Styles */
+body {
+  background: url("../../../../static/media/images/slider_image_4.jpeg")
+    no-repeat center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .form-container {
   font-family: Arial;
   color: var(--text-color);
   width: 60vw;
 }
-
 h1 {
   font-family: "Times New Roman";
-  color: var(--text-color);
+  color: var(--form-section-bg);
 }
-
+h5 {
+  font-weight: bold;
+}
+p {
+  margin: 20px 0;
+  position: relative;
+  display: inline-block;
+}
 .required-field {
-  background-color: var(--button-bg);
+  background-color: transparent;
+  caret-color: var(--text-color);
 }
-
 .required-field::before {
   content: "*";
   color: var(--text-color);
   margin-left: 2px;
+  background-color: transparent;
 }
-
-/* Form Styling */
 hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   border: 0;
   border-top: 1px solid var(--text-color);
 }
 
 /* Input and Label Styling */
-input[type="text"],
-input[type="tel"],
-input[type="radio"],
 .form-input {
-  background-color: var(--button-bg);
   border: none;
-  border-bottom: 1px solid var(--text-color);
   padding-left: 10px;
   outline-width: 0;
+  caret-color: var(--text-color);
+  color: var(--text-color);
+  background-color: transparent;
+  border-bottom: 1px solid var(--text-color);
 }
-
 input[type="radio"] {
-  background-color: var(--button-bg);
+  background-color: rgba(251, 247, 245, 0);
   border: 1px solid var(--text-color);
   outline: none;
   padding-left: 10px;
 }
-
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .form-input:focus,
 .form-input:active {
+  background-color: rgba(251, 247, 245, 0);
   border: none;
   border-bottom: 1px solid var(--text-color);
   outline-width: 0;
-  background-color: var(--button-bg);
 }
 
-#special-requests {
-  background-color: var(--button-bg);
-  border: 1px solid var(--text-color);
-  max-width: 80vw;
-  padding: 20px 20px 40vh 10px;
+/* Boxes that hold the disclaimer and input fields. Show up as slightly opaque white boxes on inquiry page */
+.form-section,
+.disclaimer {
+  color: var(--text-color);
+  background-color: rgba(251, 247, 245, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
 }
-
+#special-requests,
 #special-requests:focus,
 #special-requests:active {
+  background-color: transparent;
   border: 1px solid var(--text-color);
-  background-color: var(--button-bg);
-  padding-top: 0;
-  padding-left: 0;
-  line-height: 1em;
-  padding: 20px 20px 40vh 10px;
+  max-width: 80vw;
+  padding: 20px 10px 40vh 10px;
+  resize: none;
+  height: 25vh !important;
 }
 
 /* Button Styling */
@@ -95,41 +107,36 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s ease-in-out;
 }
-
 .submit-button:hover {
   background-color: var(--button-bg);
   color: var(--text-color);
 }
-
 .submit-button:active {
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 0 2px var(--button-bg); /* Add custom outline */
-
+  outline: none;
+  box-shadow: 0 0 0 2px var(--button-bg);
   background-color: var(--button-bg);
   color: var(--text-color);
 }
-
 .submit-button:focus {
-  outline: none; /* Remove default outline */
+  outline: none;
 }
 
-/* Label Animation */
+/* Label styling  */
 label {
-  background-color: var(--button-bg);
   color: var(--text-color);
   pointer-events: none;
   position: absolute;
   top: 0;
   transition: opacity 0.2s, transform 0.2s;
   font-size: small;
-  padding-left: 3px;
-  padding-top: 3px;
+  padding: 3px;
+  background-color: rgba(251, 247, 245, 0);
 }
 
+/* Move input labels to top of field when label is active. */
 input:focus + label,
 input:not(:placeholder-shown) + label {
-  background-color: var(--button-bg);
-  opacity: 1;
+  background-color: rgba(251, 247, 245, 0);
   transform: scale(0.75) translateY(-70%) translateX(-14px);
   font-size: small;
 }
@@ -142,45 +149,14 @@ input:not(:placeholder-shown) + label {
     font-size: xx-small;
   }
 }
-
 @media only screen and (max-width: 800px) {
   .form-container {
     width: 90vw;
   }
 }
 
-/* Additional Styling */
-p {
-  margin: 20px 0;
-  position: relative;
-  display: inline-block;
-}
-
-.form-control#best-time option {
-  font-size: small;
-}
-
+/* Radio Buttons */
 .form-check-input:checked {
   background-color: var(--text-color);
   border-color: var(--text-color);
-}
-
-textarea {
-  resize: none;
-  height: 25vh !important;
-}
-
-.disclaimer,
-.form-section {
-  color: var(--text-color);
-  background-color: var(--button-bg);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-h5 {
-  font-weight: bold;
 }
