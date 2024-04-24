@@ -5,7 +5,8 @@
 {% endblock cssfiles %}
 {% block content %}
     <div class="container d-flex justify-content-center form-container">
-        <form>
+        <form method="post" action="{% url 'inquiry:submit_inquiry_url' %}">
+            {% csrf_token %}
             <h1>Inquiry</h1>
             <div class="alert alert-warning disclaimer" role="alert">
                 <strong>Disclaimer:</strong> Our team reviews each request carefully, but approval isn't guaranteed. Due to limited staffing, we can only accept 1-2 orders per month.
@@ -21,6 +22,7 @@
                                 <input type="text"
                                        class="form-control form-input"
                                        id="first-name"
+                                       name="first-name"
                                        placeholder=" "
                                        required />
                                 <label for="first-name" class="required-field">First Name</label>
@@ -31,6 +33,7 @@
                                 <input type="text"
                                        class="form-control form-input"
                                        id="last-name"
+                                       name="last-name"
                                        placeholder=" "
                                        required />
                                 <label for="last-name" class="required-field">Last Name</label>
@@ -55,6 +58,7 @@
                                 <input type="tel"
                                        class="form-control form-input"
                                        id="contact"
+                                       name="contact"
                                        placeholder=" "
                                        title="Enter a valid phone number: XXX-XXX-XXXX"
                                        required />
@@ -66,6 +70,7 @@
                                 <input type="text"
                                        class="form-control form-input"
                                        id="company-name"
+                                       name="company-name"
                                        placeholder=" "
                                        required />
                                 <label for="company-name" class="required-field">Company Name (if applicable)</label>
@@ -82,6 +87,7 @@
                                 <input type="text"
                                        class="form-control form-input"
                                        id="quantity"
+                                       name="quantity"
                                        placeholder=" "
                                        required />
                                 <label for="quantity" class="required-field">Number of Guests</label>
@@ -89,22 +95,18 @@
                         </div>
                         <div class="col-md-8 offset-md-4">
                             <div class="form-group">
-                                <input type="text"
-                                       class="form-control form-input"
-                                       id="event-type"
-                                       placeholder=" "
-                                       required />
-                                <label for="event-type" class="required-field">Event Type</label>
-                            </div>
-                        </div>
-                        <div class="col-md-8 offset-md-4">
-                            <div class="form-group">
-                                <input type="text"
-                                       class="form-control form-input"
-                                       id="venue"
-                                       placeholder=" "
-                                       required />
-                                <label for="venue" class="required-field">Venue</label>
+                                <select class="form-control form-input custom-select"
+                                        id="event-type"
+                                        placeholder=" "
+                                        name="event-type"
+                                        required>
+                                    <option value="" selected disabled>Event Type</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="gathering">Large Gathering</option>
+                                    <option value="birthday">Birthday</option>
+                                    <option value="corp-event">Corporate Event</option>
+                                    <option value="popup">Popup</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-8 offset-md-4">
@@ -112,9 +114,12 @@
                                 <input type="text"
                                        class="form-control form-input"
                                        id="event-date"
+                                       name="event-date"
+                                       pattern="\d{4}-\d{2}-\d{2}"
+                                       title="Enter a valid date in YYYY-MM-DD format"
                                        placeholder=" "
                                        required />
-                                <label for="event-date" class="required-field">Event Date (MM/DD/YYYY)</label>
+                                <label for="event-date" class="required-field">Event Date</label>
                             </div>
                         </div>
                         <div class="col-md-8 offset-md-4">
@@ -143,6 +148,7 @@
                                     <div clas="form-group">
                                         <input type="text"
                                                class="form-control form-input"
+                                               name="pickup-name"
                                                id="pickup-name"
                                                placeholder=" "
                                                required />
@@ -156,9 +162,12 @@
                                         <input type="text"
                                                class="form-control form-input"
                                                id="pickup-date"
+                                               name="pickup-date"
+                                               pattern="\d{4}-\d{2}-\d{2}"
+                                               title="Enter a valid date in YYYY-MM-DD format"
                                                placeholder=" "
                                                required />
-                                        <label for="pickup-date" class="required-field">Pick Up Date (MM/DD/YYYY)</label>
+                                        <label for="pickup-date" class="required-field">Pick Up Date</label>
                                     </div>
                                 </div>
                             </div>
@@ -172,6 +181,9 @@
                                         <input type="text"
                                                class="form-control form-input"
                                                id="delivery-date"
+                                               name="delivery-date"
+                                               pattern="\d{4}-\d{2}-\d{2}"
+                                               title="Enter a valid date in YYYY-MM-DD format"
                                                placeholder=" "
                                                required>
                                         <label for="delivery-date" class="required-field">Delivery Date (MM/DD/YYYY)</label>
@@ -183,6 +195,7 @@
                                         <input type="text"
                                                class="form-control form-input"
                                                id="delivery-address"
+                                               name="delivery-address"
                                                placeholder=" "
                                                required>
                                         <label for="delivery-address" class="required-field">Delivery Address</label>
