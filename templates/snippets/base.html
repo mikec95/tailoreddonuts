@@ -21,18 +21,24 @@
             <!-- Bootswatch -->
             <link rel="stylesheet"
                   href="https://bootswatch.com/5/flatly/bootstrap.min.css">
-            <!-- Font Awesome -->
+            <!-- Fonts -->
             <link rel="stylesheet"
                   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+                  rel="stylesheet">
             <!-- Custom CSS -->
-            <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
             {% block cssfiles %}
             {% endblock cssfiles %}
       </head>
       <body>
             {% include "snippets/navbar_snippet.html" %}
-            {% block content %}
-            {% endblock content %}
+            <div class="main-content-container">
+                  {% block content %}
+                  {% endblock content %}
+            </div>
             {% include "snippets/footer_snippet.html" %}
             <!-- jQuery JQUERY MUST BE INCLUDED BEFORE BOOTSTRAP JS -->
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

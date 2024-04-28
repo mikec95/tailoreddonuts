@@ -6,24 +6,21 @@
   --form-section-bg: #fbf7f5;
 }
 body {
-  background: url("../../../../static/media/images/slider_image_4.jpeg")
-    no-repeat center center;
-  background-attachment: fixed;
-  background-size: cover;
+  background-color: rgba(251, 247, 245, 0.9);
 }
 .form-container {
   font-family: Arial;
   color: var(--text-color);
   width: 60vw;
 }
-h1 {
+.form-container h1 {
   font-family: "Times New Roman";
-  color: var(--form-section-bg);
+  color: var(--text-color);
 }
-h5 {
+.form-container h5 {
   font-weight: bold;
 }
-p {
+.form-container p {
   margin: 20px 0;
   position: relative;
   display: inline-block;
@@ -38,7 +35,7 @@ p {
   margin-left: 2px;
   background-color: transparent;
 }
-hr {
+.form-container hr {
   margin: 1rem 0;
   border: 0;
   border-top: 1px solid var(--text-color);
@@ -77,13 +74,12 @@ input[type="number"]::-webkit-outer-spin-button {
 .form-section,
 .disclaimer {
   color: var(--text-color);
-  background-color: rgba(251, 247, 245, 0.9);
+  background-color: #fbf7f5;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease-in-out;
-  border: 2px solid #f7ded0;
 }
 #special-requests,
 #special-requests:focus,
@@ -106,7 +102,7 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: Arial;
   padding: 10px 20px;
   border-radius: 5px;
-  border: 2px solid #f7ded0;
+  border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s ease-in-out;
 }

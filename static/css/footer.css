@@ -1,7 +1,18 @@
 footer {
-  font-family: "Arial";
-}
-.footer-container {
+  margin-top: auto; /* Push the footer to the bottom */
   background-color: #f7ded0;
-  width: 100% !important;
+  text-align: center;
+  padding: 20px 0;
+}
+footer a,
+footer p {
+  font-family: "Roboto";
+}
+
+.footer-button {
+  background-color: #ffbe98;
+  border: none;
+}
+.footer-button:hover {
+  background-color: #452c22;
 }

@@ -1,6 +1,9 @@
 body {
-  font-family: "Times New Roman";
+  font-family: "Roboto";
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f0f2;
 }
 
 /* parent container for the first section on the home page */
@@ -9,12 +12,14 @@ body {
     no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 /* First row under the welcome container */
 .welcome-row {
   width: 100vw;
-  height: 80vh;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -22,26 +27,22 @@ body {
 /* Column on the parent container of the top section. Includes opaque background and welcome blurb */
 .welcome-column {
   background-color: rgba(0, 0, 0, 0.5);
-  width: 55vw;
-  max-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 10px;
 }
+
 .welcome-column h1 {
   font-weight: 500;
   color: #feece2;
 }
 .welcome-column p {
   color: #feece2;
-  font-family: Arial;
+  font-family: "Roboto";
 }
 .about-button {
   background-color: #f7ded0;
   border: none;
   color: #242424;
-  font-family: Arial;
+  font-family: "Roboto";
   transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
 
   /* Add padding and border-radius for better appearance */
@@ -59,21 +60,26 @@ body {
 }
 
 .about-container {
-  height: 100vh;
-  width: 100vw;
+  padding: 25px 55px; /* Adjusted padding */
+  background-color: #f5f0f2;
+  color: #452c22;
 }
 
-/* Hover effect */
-.about-button:hover {
-  background-color: #f7ded0;
-  color: #242424;
+.custom-line-height-xl {
+  line-height: 3; /* Custom line height */
 }
-.about-button:active {
-  background-color: #f7ded0;
-  color: #242424;
-}
+
 .about-image {
-  max-height: 50vh;
-  border-radius: 10%;
-  float: right;
+  object-fit: cover;
+  width: 100%; /* Ensure the image takes full width of its container */
+  max-height: 70%; /* Set initial height to 100% */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); /* Drop shadow for depth */
+  transition: transform 0.3s ease;
+}
+
+@media only screen and (max-width: 800px) {
+  .custom-line-height-xl {
+    line-height: 1.7;
+  }
 }

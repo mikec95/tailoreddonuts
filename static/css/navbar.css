@@ -7,10 +7,26 @@
 
 .navbar-anchor {
   color: #452c22;
-  font-family: Arial;
+  font-family: "Roboto";
   transition: color 0.3s ease;
 }
 
 .navbar-anchor:hover {
-  color: #ffbe98;
+  color: #452c22;
+}
+.navbar-anchor:hover .navbar-anchor:not(:hover) {
+  color: #6c757d; /* Muted color for other links in the same list item */
+}
+/* Styles for collapsed navbar */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-link {
+    font-size: 1.3rem !important; /* Increase font size */
+  }
+
+  .navbar-nav .nav-item {
+    padding-left: 10px !important; /* Add left padding */
+  }
+  .navbar-logo {
+    padding-left: 10px;
+  }
 }
