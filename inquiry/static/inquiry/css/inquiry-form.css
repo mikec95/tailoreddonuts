@@ -71,10 +71,15 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /* Boxes that hold the disclaimer and input fields. Show up as slightly opaque white boxes on inquiry page */
+.disclaimer {
+  background-color: #f7ded0;
+}
+.form-section {
+  background-color: #fbf7f5;
+}
 .form-section,
 .disclaimer {
   color: var(--text-color);
-  background-color: #fbf7f5;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);

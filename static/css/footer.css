@@ -12,6 +12,7 @@ footer p {
 .footer-button {
   background-color: #ffbe98;
   border: none;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); /* Drop shadow for depth */
 }
 .footer-button:hover {
   background-color: #452c22;

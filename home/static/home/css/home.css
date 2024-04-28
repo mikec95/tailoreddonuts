@@ -27,7 +27,6 @@ body {
 /* Column on the parent container of the top section. Includes opaque background and welcome blurb */
 .welcome-column {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
 }
 .welcome-column h1 {
   font-weight: 500;
@@ -36,17 +35,6 @@ body {
 .welcome-column p {
   color: #feece2;
   font-family: "Roboto";
-}
-.about-button {
-  background-color: #f7ded0;
-  border: none;
-  color: #242424;
-  font-family: "Roboto";
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
-
-  /* Add padding and border-radius for better appearance */
-  padding: 10px 20px;
-  border-radius: 5px;
 }
 
 .card-image {
