@@ -29,7 +29,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
-
 .welcome-column h1 {
   font-weight: 500;
   color: #feece2;
@@ -54,6 +53,7 @@ body {
   height: 28vh;
   object-fit: cover;
 }
+
 .home-page-logo {
   max-height: 200px;
   max-width: 200px;
