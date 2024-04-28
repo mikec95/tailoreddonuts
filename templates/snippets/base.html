@@ -55,22 +55,41 @@
                     crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
             <script>
-                 // Wait for the document to be fully loaded before executing the JavaScript code
+                  // Wait for the document to be fully loaded before executing the JavaScript code
                   $(document).ready(function() {
+                        const pickupRadio = document.getElementById('pickup');
+                        const dropoffRadio = document.getElementById('dropoff');
+                        const pickupDetailsFieldset = document.getElementById('pickup-details');
+                        const dropoffDetailsFieldset = document.getElementById('dropoff-details');
+
+                        pickupRadio.addEventListener('change', function () {
+                              if (pickupRadio.checked) {
+                                    pickupDetailsFieldset.style.display = '';
+                                    dropoffDetailsFieldset.style.display='none';
+                              }
+                        });
+
+                        dropoffRadio.addEventListener('change', function () {
+                              if (dropoffRadio.checked) {
+                                    dropoffDetailsFieldset.style.display = '';
+                                    pickupDetailsFieldset.style.display='none';
+                              }
+                        });        
+
                         // Event listener for the 'contact' input field
                         document.getElementById('contact').addEventListener('input', function(e) {
-                        // Remove non-numeric characters from the input value
-                        let inputValue = e.target.value.replace(/[^\d]/g, '');
-                  
-                        // Format the input value based on its length
-                        if (inputValue.length === 11) {
-                              inputValue = inputValue.replace(/^(\d)(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3-$4'); 
-                        } else if (inputValue.length === 10) {
-                              inputValue = inputValue.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3'); 
-                        }
-                  
-                        // Update the input field value with the formatted value
-                        e.target.value = inputValue;
+                              // Remove non-numeric characters from the input value
+                              let inputValue = e.target.value.replace(/[^\d]/g, '');
+                        
+                              // Format the input value based on its length
+                              if (inputValue.length === 11) {
+                                    inputValue = inputValue.replace(/^(\d)(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3-$4'); 
+                              } else if (inputValue.length === 10) {
+                                    inputValue = inputValue.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3'); 
+                              }
+                        
+                              // Update the input field value with the formatted value
+                              e.target.value = inputValue;
                         });
 
                         // Event listener for the 'pickup-date' input field
@@ -87,40 +106,31 @@
                   
                         // Event listener for the 'pickup-date' input field
                         document.getElementById('pickup-date').addEventListener('input', function(e) {
-                        // Remove non-numeric characters from the input value
-                        let inputValue = e.target.value.replace(/[^\d]/g, '');
+                              // Remove non-numeric characters from the input value
+                              let inputValue = e.target.value.replace(/[^\d]/g, '');
                   
-                        // Format the input value as MM/DD/YYYY
-                        inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
+                              // Format the input value as MM/DD/YYYY
+                              inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
                   
-                        // Update the input field value with the formatted value
-                        e.target.value = inputValue;
+                              // Update the input field value with the formatted value
+                              e.target.value = inputValue;
                         });
                   
                         // Event listener for the 'event-date' input field
                         document.getElementById('event-date').addEventListener('input', function(e) {
-                        // Remove non-numeric characters from the input value
-                        let inputValue = e.target.value.replace(/[^\d]/g, '');
-                  
-                        // Format the input value as MM/DD/YYYY
-                        inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
-                  
-                        // Update the input field value with the formatted value
-                        e.target.value = inputValue;
+                              // Remove non-numeric characters from the input value
+                              let inputValue = e.target.value.replace(/[^\d]/g, '');
+                        
+                              // Format the input value as MM/DD/YYYY
+                              inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
+                        
+                              // Update the input field value with the formatted value
+                              e.target.value = inputValue;
                         });
-                  
-                        // Event listener for radio button changes
-                        $('input[type="radio"]').change(function() {
-                        // Show or hide details based on which radio button is selected
-                        if ($(this).attr('id') === 'pickup') {
-                              $('#pickup-details').show();
-                              $('#delivery-details').hide();
-                        } else if ($(this).attr('id') === 'delivery') {
-                              $('#pickup-details').hide();
-                              $('#delivery-details').show();
-                        }
-                        });
+
+                       
                   });
+                  
             </script>
       </body>
 </html>

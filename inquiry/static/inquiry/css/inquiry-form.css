@@ -1,20 +1,21 @@
-/* GLOBAL */
-:root {
+GLOBAL :root {
   --text-color: #452c22;
   --button-bg: #f7ded0;
   --body-bg: #f9f9f9;
   --form-section-bg: #fbf7f5;
 }
 body {
-  background-color: rgba(251, 247, 245, 0.9);
+  background-color: #f9f9f9;
+  color: #452c22;
 }
 .form-container {
-  font-family: Arial;
+  font-family: "Roboto";
   color: var(--text-color);
   width: 60vw;
+  padding: 50px;
 }
 .form-container h1 {
-  font-family: "Times New Roman";
+  font-family: "Roboto";
   color: var(--text-color);
 }
 .form-container h5 {
@@ -27,12 +28,11 @@ body {
 }
 .required-field {
   background-color: transparent;
+  padding: none;
   caret-color: var(--text-color);
 }
 .required-field::before {
-  content: "*";
   color: var(--text-color);
-  margin-left: 2px;
   background-color: transparent;
 }
 .form-container hr {
@@ -45,26 +45,27 @@ body {
 .form-input {
   border: none;
   padding-left: 10px;
-  outline-width: 0;
   caret-color: var(--text-color);
   color: var(--text-color);
-  background-color: transparent;
-  border-bottom: 1px solid var(--text-color);
+  border: 1px solid #cccccc;
+  outline: 1;
 }
-input[type="radio"] {
-  background-color: rgba(251, 247, 245, 0);
-  border: 1px solid var(--text-color);
-  outline: none;
-  padding-left: 10px;
-}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input[type="radio"] {
+  outline: 2px solid #cccccc; /* Darker shade of gray */
+  background-color: white;
+}
+input[type="radio"]:checked {
+  background-color: #452c22;
+}
+
 .form-input:focus,
 .form-input:active {
-  background-color: rgba(251, 247, 245, 0);
   border: none;
   border-bottom: 1px solid var(--text-color);
   outline-width: 0;
@@ -75,7 +76,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #f7ded0;
 }
 .form-section {
-  background-color: #fbf7f5;
+  background-color: #f5f0f2;
 }
 .form-section,
 .disclaimer {
@@ -89,8 +90,8 @@ input[type="number"]::-webkit-outer-spin-button {
 #special-requests,
 #special-requests:focus,
 #special-requests:active {
-  background-color: transparent;
-  border: 1px solid var(--text-color);
+  background-color: white;
+  border: 1px solid #cccccc;
   max-width: 80vw;
   padding: 20px 10px 40vh 10px;
   resize: none;
@@ -102,12 +103,11 @@ input[type="number"]::-webkit-outer-spin-button {
 .submit-button:active,
 .submit-button:focus,
 .submit-button:hover {
-  background-color: rgba(251, 247, 245, 0.9);
+  background-color: #f7ded0;
   color: var(--text-color);
-  font-family: Arial;
+  font-family: "Roboto";
   padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
+  border: 1px solid #cccccc;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s ease-in-out;
 }
@@ -118,36 +118,25 @@ label {
   pointer-events: none;
   position: absolute;
   top: 0;
+  margin-left: 5px;
+  margin-top: 3px;
   transition: opacity 0.2s, transform 0.2s;
   font-size: small;
-  padding: 3px;
+  padding: 0px;
   background-color: rgba(251, 247, 245, 0);
 }
 
 /* Move input labels to top of field when label is active. */
 input:focus + label,
 input:not(:placeholder-shown) + label {
-  background-color: rgba(251, 247, 245, 0);
+  background-color: white;
   transform: scale(0.75) translateY(-70%) translateX(-14px);
   font-size: small;
 }
 
 /* Media queries for responsiveness */
-@media only screen and (max-width: 1230px) {
-  label,
-  input:focus + label,
-  input:not(:placeholder-shown) + label {
-    font-size: xx-small;
-  }
-}
 @media only screen and (max-width: 800px) {
   .form-container {
     width: 90vw;
   }
-}
-
-/* Radio Buttons */
-.form-check-input:checked {
-  background-color: var(--text-color);
-  border-color: var(--text-color);
 }
