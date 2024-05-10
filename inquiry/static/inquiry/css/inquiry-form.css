@@ -46,13 +46,17 @@ body {
   background-color: transparent;
 }
 
-/* Horizontal Rule Styles */
-.form-container hr {
-  margin: 1rem 0;
-  border: 0;
-  border-top: 1px solid var(--text-color);
+/* Container Styles */
+.disclaimer,
+.form-section {
+  background-color: var(--form-section-bg);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease-in-out;
 }
-
 /* Input and Label Styling */
 /* Reset default styles */
 input[type="number"]::-webkit-inner-spin-button,
@@ -83,19 +87,7 @@ input[type="number"]::-webkit-outer-spin-button {
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Container Styles */
-.disclaimer,
-.form-section {
-  background-color: var(--form-section-bg);
-  color: var(--text-color);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-/* Textarea Styles */
+/* Message textarea Styles */
 #special-requests {
   background-color: #f9f9f9;
   border: 1px solid #cccccc;
@@ -105,8 +97,10 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 25vh !important;
 }
 
-/* Button Styles */
-.submit-button {
+/* Button Style */
+.submit-button,
+.submit-button:active,
+.submit-button:hover {
   background-color: var(--button-bg);
   color: var(--text-color);
   font-family: "Roboto";

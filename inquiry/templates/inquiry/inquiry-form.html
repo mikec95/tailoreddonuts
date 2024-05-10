@@ -9,7 +9,7 @@
             <form method="post" action="{% url 'inquiry:submit_inquiry_url' %}">
                 <h1 class="fw-light text-center">Contact Us!</h1>
                 <div class="font-italic fw-light text-center lh-md">
-                    Please fill out the following form and we will get back to you shortly.
+                    Donut worry, we'll be in touch before you can say "glazed perfection"!
                 </div>
                 <br>
                 {% csrf_token %}
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col">
+                        <div class="form-group col-md-6 mr-2">
                             <input type="text"
                                    class="form-control form-input rounded-0"
                                    id="contact1"
@@ -48,9 +48,7 @@
                                    required>
                             <label for="contact1" class="required-field text-muted">Phone Number</label>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
+                        <div class="form-group col-md">
                             <input type="email"
                                    class="form-control form-input rounded-0"
                                    id="email"
@@ -84,7 +82,7 @@
                 </div>
             </div>
         </form>
-        <br >
+        <br>
     </div>
 </div>
 {% endblock content %}
