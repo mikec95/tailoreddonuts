@@ -4,46 +4,22 @@
     <link rel="stylesheet" href="{% static 'inquiry/css/inquiry-form.css' %}" />
 {% endblock cssfiles %}
 {% block content %}
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-sm mb-4 d-md-none">
-                <div class="p-3"
-                     style="background-color: white;
-                            border: 1px solid #cccccc;
-                            height: 37vh">
-                    <h3 class="fw-light text-center">Catering Availability</h3>
-                    <hr style="width: 70%; margin: 0 auto;">
-                    <br>
-                    <ul class="list-unstyled">
-                        <li class="text-muted mb-2">
-                            <strong>Sat-Sun:</strong> 9am-5pm
-                        </li>
-                        <li class="text-muted mb-2">
-                            <strong>Fri:</strong> 4pm-7pm
-                        </li>
-                        <li class="text-muted mb-2">
-                            <strong>Mon-Thurs:</strong> Closed
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container d-flex justify-content-center form-container">
-        <div class="col-sm-9">
+        <div class="col-sm col-md">
             <form method="post" action="{% url 'inquiry:submit_inquiry_url' %}">
-                <h1 class="fw-light text-center">Event Catering Inquiry Form</h1>
-                <div class="font-italic fw-light text-center lh-lg">
-                    We would love to cater your event! Please fill out the following form and we will get back to you shortly.
+                <h1 class="fw-light text-center">Contact Us!</h1>
+                <div class="font-italic fw-light text-center lh-md">
+                    Please fill out the following form and we will get back to you shortly.
                 </div>
+                <br>
                 {% csrf_token %}
                 <fieldset>
-                    <legend class="fw-light">
-                        Name:
+                    <legend class="fw-light h3">
+                        Contact Info:
                         <p class="text-muted" style="font-size: 0.75rem">(required)</p>
                     </legend>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 mr-2">
                             <input type="text"
                                    class="form-control form-input rounded-0"
                                    id="first-name"
@@ -52,7 +28,7 @@
                                    required>
                             <label for="firstName" class="required-field text-muted">First Name</label>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md">
                             <input type="text"
                                    class="form-control form-input rounded-0"
                                    id="last-name"
@@ -62,30 +38,17 @@
                             <label for="last-name" class="required-field text-muted">Last Name</label>
                         </div>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="fw-light">
-                        Phone Number:
-                        <p class="text-muted" style="font-size: 0.75rem">(required)</p>
-                    </legend>
                     <div class="form-row">
                         <div class="form-group col">
-                            <input type="tel"
+                            <input type="text"
                                    class="form-control form-input rounded-0"
-                                   id="contact"
-                                   name="contact"
+                                   id="contact1"
+                                   name="contact1"
                                    placeholder=" "
-                                   title="Enter a valid phone number: XXX-XXX-XXXX"
-                                   required />
-                            <label for="phone-number" class="required-field text-muted">Phone</label>
+                                   required>
+                            <label for="contact1" class="required-field text-muted">Phone Number</label>
                         </div>
                     </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="fw-light">
-                        Email:
-                        <p class="text-muted" style="font-size: 0.75rem">(required)</p>
-                    </legend>
                     <div class="form-row">
                         <div class="form-group col">
                             <input type="email"
@@ -99,111 +62,10 @@
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend class="fw-light">
-                        Type of Event:
+                    <legend class="fw-light h3">
+                        Message:
                         <p class="text-muted" style="font-size: 0.75rem">(required)</p>
                     </legend>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <select class="form-control form-input custom-select rounded-0"
-                                    id="event-type"
-                                    name="event-type"
-                                    required>
-                                <option value="" selected disabled>Select Type of Event</option>
-                                <option value="wedding">Wedding</option>
-                                <option value="birthday">Birthday Party</option>
-                                <option value="corporate">Corporate Event</option>
-                                <option value="popup">Popup</option>
-                            </select>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="fw-light">
-                        Pickup or Drop-off?
-                        <p class="text-muted" style="font-size: 0.75rem">(required)</p>
-                    </legend>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <div class="form-check form-check-inline mr-4">
-                                <input class="form-check-input"
-                                       type="radio"
-                                       name="event-option"
-                                       id="pickup"
-                                       value="pickup"
-                                       required>
-                                <label class="form-check-label" for="pickup">Pickup</label>
-                            </div>
-                            <div class="form-check form-check-inline ml-4">
-                                <input class="form-check-input"
-                                       type="radio"
-                                       name="event-option"
-                                       id="dropoff"
-                                       value="dropoff"
-                                       required>
-                                <label class="form-check-label" for="dropoff">Drop Off</label>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset id="pickup-details" style="display:none;">
-                    <legend class="fw-light">Pickup Details:</legend>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <input type="text"
-                                   class="form-control form-input rounded-0"
-                                   id="requested-pickup-time"
-                                   name="requested-pickup-time"
-                                   placeholder=""
-                                   required />
-                            <label class="required-field text-muted" for="requested-pickup-time">Requested Pick Up Time</label>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset id="dropoff-details" style="display:none;">
-                    <legend class="fw-light">Drop-Off Details:</legend>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <input type="text"
-                                   class="form-control form-input rounded-0"
-                                   id="dropoff-address"
-                                   name="dropoff-address"
-                                   placeholder=""
-                                   required />
-                            <label class="required-field text-muted" for="dropoff-address">Drop-Off Address:</label>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <input type="text"
-                                   class="form-control form-input rounded-0"
-                                   id="dropoff-date"
-                                   name="dropoff-date"
-                                   placeholder=""
-                                   required />
-                            <label class="required-field text-muted" for="dropoff-date">Drop-Off Date:</label>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text"
-                                   class="form-control form-input rounded-0"
-                                   id="dropoff-time"
-                                   name="dropoff-time"
-                                   placeholder=""
-                                   required />
-                            <label class="required-field text-muted" for="dropoff-time">Drop-Off Time:</label>
-                        </div>
-                    </div>
-                    <div class="form-row"></div>
-                    <div class="row">
-                        <div class="col">
-                            <p class="large" style="color:#452c22">
-                                <strong><i>* Delivery cost is calculated by mileage</i></strong>
-                            </p>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend class="fw-light">Special Requests:</legend>
                     <div class="form-row">
                         <div class="form-group col">
                             <input type="text"
@@ -222,23 +84,7 @@
                 </div>
             </div>
         </form>
-    </div>
-    <div class="col-sm-4 col-4 p-3 ml-4 d-none d-md-block"
-         style="background-color: white;
-                border: 1px solid #cccccc;
-                height: 40vh">
-        <h3 class="fw-light text-center">Catering Availability</h3>
-        <ul class="list-unstyled">
-            <li class="text-muted mb-2">
-                <strong>Sat-Sun:</strong> 9am-5pm
-            </li>
-            <li class="text-muted mb-2">
-                <strong>Fri:</strong> 4pm-7pm
-            </li>
-            <li class="text-muted mb-2">
-                <strong>Mon-Thurs:</strong> Closed
-            </li>
-        </ul>
+        <br >
     </div>
 </div>
 {% endblock content %}

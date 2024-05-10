@@ -20,7 +20,7 @@
 /* Styles for collapsed navbar */
 @media (max-width: 991.98px) {
   .navbar-nav .nav-link {
-    font-size: 1.3rem !important; /* Increase font size */
+    font-size: 1rem !important; /* Increase font size */
   }
 
   .navbar-nav .nav-item {

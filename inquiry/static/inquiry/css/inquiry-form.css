@@ -1,40 +1,52 @@
-GLOBAL :root {
+/* Global Styles */
+:root {
   --text-color: #452c22;
   --button-bg: #f7ded0;
   --body-bg: #f9f9f9;
   --form-section-bg: #fbf7f5;
 }
+
 body {
-  background-color: #f9f9f9;
-  color: #452c22;
+  background-color: var(--body-bg);
+  color: var(--text-color);
 }
+
+/* Container Styles */
 .form-container {
   font-family: "Roboto";
   color: var(--text-color);
   width: 60vw;
-  padding: 50px;
+  padding: 25px;
 }
+
 .form-container h1 {
   font-family: "Roboto";
   color: var(--text-color);
 }
+
 .form-container h5 {
   font-weight: bold;
 }
+
 .form-container p {
   margin: 20px 0;
   position: relative;
   display: inline-block;
 }
+
+/* Required Field Styles */
 .required-field {
   background-color: transparent;
   padding: none;
   caret-color: var(--text-color);
 }
+
 .required-field::before {
   color: var(--text-color);
   background-color: transparent;
 }
+
+/* Horizontal Rule Styles */
 .form-container hr {
   margin: 1rem 0;
   border: 0;
@@ -42,44 +54,39 @@ body {
 }
 
 /* Input and Label Styling */
-.form-input {
-  border: none;
-  padding-left: 10px;
-  caret-color: var(--text-color);
-  color: var(--text-color);
-  border: 1px solid #cccccc;
-  outline: 1;
-}
-
+/* Reset default styles */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-input[type="radio"] {
-  outline: 2px solid #cccccc; /* Darker shade of gray */
-  background-color: white;
-}
-input[type="radio"]:checked {
-  background-color: #452c22;
+
+/* Simplified input styles */
+.form-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  background-color: #f9f9f9;
 }
 
+/* Focus and active state */
 .form-input:focus,
 .form-input:active {
-  border: none;
-  border-bottom: 1px solid var(--text-color);
-  outline-width: 0;
+  background-color: #f9f9f9;
+  outline: none;
+  border-bottom-color: var(--text-color);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Boxes that hold the disclaimer and input fields. Show up as slightly opaque white boxes on inquiry page */
-.disclaimer {
-  background-color: #f7ded0;
-}
+/* Container Styles */
+.disclaimer,
 .form-section {
-  background-color: #f5f0f2;
-}
-.form-section,
-.disclaimer {
+  background-color: var(--form-section-bg);
   color: var(--text-color);
   padding: 20px;
   border-radius: 10px;
@@ -87,10 +94,10 @@ input[type="radio"]:checked {
   margin-bottom: 20px;
   transition: box-shadow 0.3s ease-in-out;
 }
-#special-requests,
-#special-requests:focus,
-#special-requests:active {
-  background-color: white;
+
+/* Textarea Styles */
+#special-requests {
+  background-color: #f9f9f9;
   border: 1px solid #cccccc;
   max-width: 80vw;
   padding: 20px 10px 40vh 10px;
@@ -98,12 +105,9 @@ input[type="radio"]:checked {
   height: 25vh !important;
 }
 
-/* Button Styling */
-.submit-button,
-.submit-button:active,
-.submit-button:focus,
-.submit-button:hover {
-  background-color: #f7ded0;
+/* Button Styles */
+.submit-button {
+  background-color: var(--button-bg);
   color: var(--text-color);
   font-family: "Roboto";
   padding: 10px 20px;
@@ -112,13 +116,12 @@ input[type="radio"]:checked {
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s ease-in-out;
 }
 
-/* Label styling  */
+/* Label Styles */
 label {
   color: var(--text-color);
   pointer-events: none;
   position: absolute;
   top: 0;
-  margin-left: 5px;
   margin-top: 3px;
   transition: opacity 0.2s, transform 0.2s;
   font-size: small;
