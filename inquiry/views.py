@@ -18,20 +18,11 @@ def submit_form(request):
         form_data = InquiryForm(
             first_name=request.POST.get('first-name'),
             last_name=request.POST.get('last-name'),
-            preferred_contact_time=request.POST.get('best-time'),
-            phone_number=request.POST.get('contact'),
-            company_name=request.POST.get('company-name'),
-            num_guests=request.POST.get('quantity'),
-            event_type=request.POST.get('event-type'),
-            event_date=request.POST.get('event-date'),
-            pickup_delivery=request.POST.get('pickup-delivery'),
-            pickup_name=request.POST.get('pickup-name'),
-            pickup_date=request.POST.get('pickup-date'),
-            delivery_date=request.POST.get('delivery-date'),
-            delivery_address=request.POST.get('delivery-address'),
+            phone_number=request.POST.get('phone-number'),
+            email=request.POST.get('email'),
             special_requests=request.POST.get('special-requests')
         )
         form_data.save()
 
         # Redirect to a success page or another URL
-        return render(request, 'home/home.html')
+        return render(request, 'inquiry/inquiry-form.html')

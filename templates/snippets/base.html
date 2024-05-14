@@ -57,27 +57,8 @@
             <script>
                   // Wait for the document to be fully loaded before executing the JavaScript code
                   $(document).ready(function() {
-                        const pickupRadio = document.getElementById('pickup');
-                        const dropoffRadio = document.getElementById('dropoff');
-                        const pickupDetailsFieldset = document.getElementById('pickup-details');
-                        const dropoffDetailsFieldset = document.getElementById('dropoff-details');
-
-                        pickupRadio.addEventListener('change', function () {
-                              if (pickupRadio.checked) {
-                                    pickupDetailsFieldset.style.display = '';
-                                    dropoffDetailsFieldset.style.display='none';
-                              }
-                        });
-
-                        dropoffRadio.addEventListener('change', function () {
-                              if (dropoffRadio.checked) {
-                                    dropoffDetailsFieldset.style.display = '';
-                                    pickupDetailsFieldset.style.display='none';
-                              }
-                        });        
-
                         // Event listener for the 'contact' input field
-                        document.getElementById('contact').addEventListener('input', function(e) {
+                        document.getElementById('phone-number').addEventListener('input', function(e) {
                               // Remove non-numeric characters from the input value
                               let inputValue = e.target.value.replace(/[^\d]/g, '');
                         
@@ -90,47 +71,8 @@
                         
                               // Update the input field value with the formatted value
                               e.target.value = inputValue;
-                        });
-
-                        // Event listener for the 'pickup-date' input field
-                        document.getElementById('delivery-date').addEventListener('input', function(e) {
-                              // Remove non-numeric characters from the input value
-                              let inputValue = e.target.value.replace(/[^\d]/g, '');
-                        
-                              // Format the input value as MM/DD/YYYY
-                              inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
-                        
-                              // Update the input field value with the formatted value
-                              e.target.value = inputValue;
-                              });
-                  
-                        // Event listener for the 'pickup-date' input field
-                        document.getElementById('pickup-date').addEventListener('input', function(e) {
-                              // Remove non-numeric characters from the input value
-                              let inputValue = e.target.value.replace(/[^\d]/g, '');
-                  
-                              // Format the input value as MM/DD/YYYY
-                              inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
-                  
-                              // Update the input field value with the formatted value
-                              e.target.value = inputValue;
-                        });
-                  
-                        // Event listener for the 'event-date' input field
-                        document.getElementById('event-date').addEventListener('input', function(e) {
-                              // Remove non-numeric characters from the input value
-                              let inputValue = e.target.value.replace(/[^\d]/g, '');
-                        
-                              // Format the input value as MM/DD/YYYY
-                              inputValue = inputValue.replace(/^(\d{4})(\d{2})(\d{2})$/, '$1-$2-$3');
-                        
-                              // Update the input field value with the formatted value
-                              e.target.value = inputValue;
-                        });
-
-                       
-                  });
-                  
+                        });                       
+                  });             
             </script>
       </body>
 </html>
