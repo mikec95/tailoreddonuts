@@ -25,8 +25,8 @@
                                    id="first-name"
                                    name="first-name"
                                    placeholder=" "
-                                   required>
-                            <label for="firstName" class="required-field text-muted">First Name</label>
+                                   required/>
+                            <label for="first-name" class="required-field text-muted">First Name</label>
                         </div>
                         <div class="form-group col-md">
                             <input type="text"
@@ -34,7 +34,7 @@
                                    id="last-name"
                                    name="last-name"
                                    placeholder=" "
-                                   required>
+                                   required />
                             <label for="last-name" class="required-field text-muted">Last Name</label>
                         </div>
                     </div>
@@ -45,7 +45,8 @@
                                    id="phone-number"
                                    name="phone-number"
                                    placeholder=" "
-                                   required>
+                                   required
+                                   pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}|[0-9]{3}-[0-9]{3}-[0-9]{4}" />
                             <label for="phone-number" class="required-field text-muted">Phone Number</label>
                         </div>
                         <div class="form-group col-md">
@@ -54,7 +55,8 @@
                                    id="email"
                                    name="email"
                                    placeholder=" "
-                                   required />
+                                   required
+                                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" />
                             <label for="email" class="required-field text-muted">Email</label>
                         </div>
                     </div>
@@ -71,18 +73,17 @@
                                    id="special-requests"
                                    name="special-requests"
                                    placeholder=""
-                                   required>
-                        </input>
+                                   required/>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="row">
+                    <div class="col-md-8">
+                        <button type="submit" class="btn btn-primary submit-button">Send</button>
                     </div>
                 </div>
-            </fieldset>
-            <div class="row">
-                <div class="col-md-8">
-                    <button type="submit" class="btn btn-primary submit-button">Send</button>
-                </div>
-            </div>
-        </form>
-        <br>
+            </form>
+            <br>
+        </div>
     </div>
-</div>
 {% endblock content %}

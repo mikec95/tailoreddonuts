@@ -11,4 +11,4 @@ class InquiryForm(models.Model):
     date_time_sent = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return f"Inquiry - {self.first_name} {self.last_name}"
+        return f"Inquiry - {self.first_name} - {self.last_name} - {self.date_time_sent}"
