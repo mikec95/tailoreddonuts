@@ -10,7 +10,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('inquiry/', include('inquiry.urls', namespace='inquiry')),
-    path('menu/', include('menu.urls', namespace='menu'))
+    path('menu/', include('menu.urls', namespace='menu')),
+    path('gallery/', include('gallery.urls', namespace='gallery'))
 ]
 
 # Serve media files during development
