@@ -6,7 +6,7 @@ body {
   background-color: #f5f0f2;
 }
 
-/* parent container for the first section on the home page */
+/* Parent container for the first section on the home page */
 .welcome-container {
   background: url("/static/home/images/index_background.jpg") no-repeat center
     center;
@@ -14,7 +14,7 @@ body {
   background-attachment: fixed;
   align-items: center;
   justify-content: center;
-  display: block;
+  display: flex; /* Changed to flex for alignment */
 }
 
 /* First row under the welcome container */
@@ -26,19 +26,19 @@ body {
 
 /* Column on the parent container of the top section. Includes opaque background and welcome blurb */
 .welcome-column {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .welcome-column h1 {
-  font-weight: 500;
+  font-weight: 450;
   color: #feece2;
+  font-size: 3.8rem;
 }
 .welcome-column p {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: #feece2;
-  font-family: "Roboto";
 }
+
 .card-image {
   height: 28vh;
   object-fit: cover;
@@ -48,25 +48,28 @@ body {
   max-width: 200px;
 }
 
-/**
-About section
-**/
+/* About section */
 .about-container {
-  padding: 0px 200px 0px 200px; /* Adjusted padding */
+  padding: 0 200px; /* Adjusted padding */
   background-color: #f5f0f2;
   color: #452c22;
   width: 100vw;
 }
+.about-container h1 {
+  font-weight: 450;
+  color: #452c22;
+  font-size: 3.8rem;
+}
 .custom-line-height-xl {
-  line-height: 3; /* Custom line height */
+  line-height: 3;
 }
 .text-md-lg {
-  font-size: 1.7rem; /* Adjust the font size as needed */
+  font-size: 1.7rem;
 }
 .about-image {
   object-fit: cover;
   max-width: 50%;
-  max-height: 50%;
+  max-height: 40%;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -74,15 +77,21 @@ About section
   margin-right: 20px;
 }
 
+/* Media query for smaller screens */
 @media only screen and (max-width: 800px) {
   .custom-line-height-xl {
-    line-height: 1.7;
+    line-height: 2;
   }
   .text-md-lg {
-    font-size: 1rem; /* Adjust the font size as needed */
+    font-size: 0.8rem;
   }
   .about-container {
     padding: 10px; /* Adjusted padding */
+  }
+  .about-container h1,
+  .welcome-column h1 {
+    font-weight: 450;
+    font-size: 2rem;
   }
   .welcome-column p {
     font-size: 1rem;
