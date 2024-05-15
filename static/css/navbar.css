@@ -1,5 +1,9 @@
 .navbar-container {
-  background-color: #f7ded0 !important;
+  position: fixed; /* Fix the navbar to the top */
+  top: 0; /* Position it at the top of the viewport */
+  width: 100%; /* Occupy the full width of the viewport */
+  z-index: 1000; /* Ensure it appears above other content */
+  background-color: #f7ded0 !important; /* Your background color */
 }
 .navbar-logo {
   max-height: 60px;

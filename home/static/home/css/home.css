@@ -12,9 +12,9 @@ body {
     center;
   background-size: cover;
   background-attachment: fixed;
-  padding: 10px;
   align-items: center;
   justify-content: center;
+  display: block;
 }
 
 /* First row under the welcome container */

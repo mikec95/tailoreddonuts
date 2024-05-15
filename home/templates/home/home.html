@@ -1,11 +1,12 @@
 {% extends "snippets/base.html" %}
+<br>
 {% load static %}
 {% block cssfiles %}
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
 {% endblock cssfiles %}
 {% block content %}
-    <div class="py-4 text-center welcome-container">
-        <div class="row py-lg-5 welcome-row">
+    <div class="py-4 text-center welcome-container d-flex justify-content-center">
+        <div class="row py-lg-5 welcome-row d-flex justify-content-center">
             <div class="col-lg-6 col-md-8 col-sm-10 mx-auto welcome-column">
                 <h1 class="text-center fw-light">Welcome to</h1>
                 <h1 class="text-center fw-light">Tailored Donuts!</h1>
