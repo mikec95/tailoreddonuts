@@ -137,3 +137,17 @@ input:not(:placeholder-shown) + label {
     width: 90vw;
   }
 }
+
+.success-message {
+  background-color: #674233;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 100%;
+  max-width: 60vw; /* Adjust the max-width as needed */
+  padding: 10px;
+}

@@ -71,7 +71,15 @@
                         
                               // Update the input field value with the formatted value
                               e.target.value = inputValue;
-                        });                       
+                        });
+
+                        // Get the success message element
+                        const successMessage = document.querySelector('.success-message');
+
+                        // Set a timeout to fade out the message after 3 seconds (adjust as needed)
+                        setTimeout(() => {
+                        successMessage.classList.remove('show'); // Remove the 'show' class to hide the message
+                        }, 3000); // 3000 milliseconds = 3 seconds
                   });             
             </script>
       </body>
