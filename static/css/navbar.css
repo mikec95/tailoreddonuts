@@ -10,6 +10,7 @@
 }
 
 .navbar-anchor {
+  font-size: 1.3rem;
   color: #452c22;
   font-family: "Roboto";
   transition: color 0.3s ease;

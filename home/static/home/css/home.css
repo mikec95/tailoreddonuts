@@ -26,6 +26,8 @@ body {
 
 /* Column on the parent container of the top section. Includes opaque background and welcome blurb */
 .welcome-column {
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .welcome-column h1 {
