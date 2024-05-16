@@ -55,6 +55,25 @@
                     crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
             <script>
+                  document.addEventListener('DOMContentLoaded', () => {
+                        const fadeElements = document.querySelectorAll('.fade-in');
+                    
+                        function checkFade() {
+                            fadeElements.forEach((element) => {
+                                const elementTop = element.getBoundingClientRect().top;
+                                const elementBottom = element.getBoundingClientRect().bottom;
+                    
+                                const isVisible = (elementTop >= 0 && elementTop <= window.innerHeight);
+                    
+                                if (isVisible) {
+                                    element.classList.add('visible');
+                                }
+                            });
+                        }
+                    
+                        window.addEventListener('scroll', checkFade);
+                        checkFade(); // Check on page load
+                    });
                   // Wait for the document to be fully loaded before executing the JavaScript code
                   $(document).ready(function() {
                         // Event listener for the 'contact' input field

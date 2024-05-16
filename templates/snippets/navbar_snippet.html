@@ -25,16 +25,20 @@
         <div class="navbar-collapse collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'home:home' %}">Home</a> <!-- Normal font size -->
+                    <a class="nav-link navbar-anchor {% if request.path == '/' %}active{% endif %}"
+                       href="{% url 'home:home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'inquiry:inquiry_url' %}">Contact</a> <!-- Normal font size -->
+                    <a class="nav-link navbar-anchor {% if request.path == '/inquiry/' %}active{% endif %}"
+                       href="{% url 'inquiry:inquiry_url' %}">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'menu:menu_url' %}">Menu</a> <!-- Normal font size -->
+                    <a class="nav-link navbar-anchor {% if request.path == '/menu/' %}active{% endif %}"
+                       href="{% url 'menu:menu_url' %}">Menu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link navbar-anchor" href="{% url 'gallery:gallery_url' %}">Gallery</a> <!-- Normal font size -->
+                    <a class="nav-link navbar-anchor {% if request.path == '/gallery/' %}active{% endif %}"
+                       href="{% url 'gallery:gallery_url' %}">Gallery</a>
                 </li>
             </ul>
         </div>

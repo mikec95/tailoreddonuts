@@ -50,10 +50,8 @@ body {
 
 /* About section */
 .about-container {
-  padding: 0 200px; /* Adjusted padding */
   background-color: #f5f0f2;
   color: #452c22;
-  width: 100vw;
 }
 .about-container h1 {
   font-weight: 450;
@@ -76,7 +74,14 @@ body {
   float: left;
   margin-right: 20px;
 }
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
 
+.fade-in.visible {
+  opacity: 1;
+}
 /* Media query for smaller screens */
 @media only screen and (max-width: 800px) {
   .custom-line-height-xl {
