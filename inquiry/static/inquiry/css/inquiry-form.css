@@ -22,6 +22,7 @@ body {
 .form-container h1 {
   font-family: "Roboto";
   color: var(--text-color);
+  font-size: 3.8rem;
 }
 
 .form-container h5 {
@@ -118,7 +119,7 @@ label {
   top: 0;
   margin-top: 3px;
   transition: opacity 0.2s, transform 0.2s;
-  font-size: small;
+  font-size: medium;
   padding: 0px;
   background-color: rgba(251, 247, 245, 0);
 }
@@ -126,7 +127,7 @@ label {
 /* Move input labels to top of field when label is active. */
 input:focus + label,
 input:not(:placeholder-shown) + label {
-  background-color: white;
+  background-color: #f9f9f9;
   transform: scale(0.75) translateY(-70%) translateX(-14px);
   font-size: small;
 }

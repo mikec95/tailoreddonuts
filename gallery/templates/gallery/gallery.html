@@ -4,5 +4,66 @@
     <link rel="stylesheet" href="{% static 'gallery/css/gallery.css' %}" />
 {% endblock cssfiles %}
 {% block content %}
-    <h1>GALLERY PAGE</h1>
+    <div class="gallery-container">
+        <div class="container">
+            <h1 class="fw-light text-center">Gallery</h1>
+            <div class="font-italic fw-light text-center lh-md">Immerse yourself in tasty delights!</div>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="grid-item" style="height: 400px;">
+                        <img src="{% static 'media/home/images/index_background.jpg' %}">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row ">
+                        <div class="grid-item" style="height: 200px;">
+                            <img src="{% static 'media/home/images/about-taylor.jpeg' %}">
+                        </div>
+                        <div class="grid-item mr-4" style="height: 200px;">
+                            <img src="{% static 'media/home/images/navbar_logo_modified.png' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="grid-item" style="height: 200px;">
+                            <img src="{% static 'media/gallery/images/government.png' %}">
+                        </div>
+                        <div class="grid-item" style="height: 200px;">
+                            <img src="{% static 'media/gallery/images/vegan-chocolate-donut.jpg' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- second row -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row ">
+                        <div class="grid-item" style="height: 200px;">
+                            <img src="{% static 'media/gallery/images/IMG_8008.jpeg' %}">
+                        </div>
+                        <div class="grid-item mr-4" style="height: 200px;">
+                            <img src="{% static 'media/gallery/images/IMG_8009.jpeg' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div class="grid-item" style="height: 200px;">
+                            <img src="{% static 'media/gallery/images/IMG_8010.jpeg' %}">
+                        </div>
+                        <div class="grid-item" style="height: 200px;">
+                            <img src="{% static 'media/gallery/images/IMG_8011.jpeg' %}">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="grid-item" style="height: 400px;">
+                        <img src="{% static 'media/gallery/images/IMG_8013.jpeg' %}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
