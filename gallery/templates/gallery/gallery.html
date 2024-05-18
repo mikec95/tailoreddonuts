@@ -18,19 +18,20 @@
                     <!-- Close button for the modal -->
                     <span class="close" id="closeModalButton">&times;</span>
                     <!-- Full image displayed in the modal -->
-                    <img id="fullImage" src="" alt="Full Image" />
+                    <img id="fullImage" alt="Full Image" />
                     <!-- Caption and description for the full image -->
-                    <div id="modalCaption" class="caption" style="color: #aaa;"></div>
-                    <div id="modalDescription" class="caption" style="color: #aaa;"></div>
+                    <div id="modalCaption" class="caption"></div>
+                    <div id="modalDescription" class="caption"></div>
                 </div>
             </div>
             <!-- Grid for displaying thumbnail images -->
-            <div class="row">
+            <div class="row g-1">
                 {% for item in page_obj %}
                     <div class="col-md-4">
                         <div class="grid-item fade-in" style="height: 275px;">
                             <!-- Thumbnail image with data attributes for full image, title, and description -->
                             <img class="thumbnail"
+                                 id="thumbnail"
                                  src="{{ item.image.url }}"
                                  data-full-image="{{ item.image.url }}"
                                  data-title="{{ item.image_title }}"
@@ -48,8 +49,8 @@
                     <a href="?page={{ page_obj.previous_page_number }}"
                        class="page-link mr-2">&lt;</a>
                 {% else %}
-                    <span class="page-link mr-2">&lt;&lt;</span>
-                    <span class="page-link mr-2">&lt;</span>
+                    <span class="page-link mr-2 disabled-pagination">&lt;&lt;</span>
+                    <span class="page-link mr-2 disabled-pagination">&lt;</span>
                 {% endif %}
                 <!-- Numbered page links -->
                 {% if page_obj.paginator.num_pages > 3 %}
@@ -59,7 +60,7 @@
                     {% endif %}
                     {% for num in page_obj.paginator.page_range %}
                         {% if num == page_obj.number %}
-                            <span class="page-link current">{{ num }}</span>
+                            <span class="page-link current disabled-pagination">{{ num }}</span>
                         {% elif num >= page_obj.number|add:"-1" and num <= page_obj.number|add:"1" %}
                             <a href="?page={{ num }}" class="page-link">{{ num }}</a>
                         {% endif %}
@@ -83,8 +84,8 @@
                     <a href="?page={{ page_obj.paginator.num_pages }}"
                        class="page-link ml-2">&gt;&gt;</a>
                 {% else %}
-                    <span class="page-link ml-2">&gt;</span>
-                    <span class="page-link ml-2">&gt;&gt;</span>
+                    <span class="page-link ml-2 disabled-pagination">&gt;</span>
+                    <span class="page-link ml-2 disabled-pagination">&gt;&gt;</span>
                 {% endif %}
             </div>
         </div>

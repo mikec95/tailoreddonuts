@@ -1,54 +1,57 @@
 :root {
-  --text-color: #452c22;
-  --button-bg: #f7ded0;
-  --body-bg: #f9f9f9;
-  --form-section-bg: #fbf7f5;
+  --text-color: #452c22; /* Primary text color */
+  --button-bg: #f7ded0; /* Background color for buttons */
+  --body-bg: #f9f9f9; /* Background color for the body */
+  --form-section-bg: #fbf7f5; /* Background color for form sections */
 }
+
 body {
-  background-color: var(--body-bg);
-  color: var(--text-color);
+  background-color: var(--body-bg); /* Set the body background color */
+  color: var(--text-color); /* Set the body text color */
 }
 
 /* Custom styles for demonstration purposes */
 .gallery-container {
-  padding: 40px 0px 25px 0px;
+  padding: 40px 0px 25px 0px; /* Padding for the gallery container */
 }
 .gallery-container h1 {
-  font-family: "Roboto";
-  color: var(--text-color);
-  font-size: 3.8rem;
+  font-family: "Roboto"; /* Font family for the h1 */
+  color: var(--text-color); /* Text color for the h1 */
+  font-size: 3.8rem; /* Font size for the h1 */
 }
+
 .grid-item {
-  border: 1px solid #ddd;
-  margin: 2px;
-  transition: box-shadow 0.9s ease; /* Adding transition for smooth effect */
+  border: 1px solid #ddd; /* Border for grid items */
+  transition: box-shadow 0.9s ease-in-out; /* Adding transition for smooth effect */
 }
 
 /* Hover effect */
 .grid-item:hover {
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
-  cursor: pointer;
+  box-shadow: 0px 0px 10px rgb(247, 222, 208, 0.9); /* Shadow effect on hover */
+  cursor: pointer; /* Change cursor to pointer on hover */
 }
+
 .grid-item img {
-  width: 100%;
-  height: 100%;
+  width: 100%; /* Ensure image takes full width of container */
+  height: 100%; /* Ensure image takes full height of container */
   object-fit: cover; /* Maintain aspect ratio without distortion */
 }
+
 .fade-in {
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+  opacity: 0; /* Initial opacity for fade-in effect */
+  transition: opacity 0.8s ease-in-out; /* Transition effect for fade-in */
 }
 
 .fade-in.visible {
-  opacity: 1;
+  opacity: 1; /* Full opacity when element becomes visible */
 }
 
 .pagination-container a,
 .pagination-container span {
-  background-color: #ffbe98;
-  color: white;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
-  margin: 3px;
+  background-color: #ffbe98; /* Background color for pagination links */
+  color: white; /* Text color for pagination links */
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3); /* Box shadow for pagination links */
+  margin: 2px; /* Margin for pagination links */
 }
 
 .pagination-container a:hover,
@@ -57,92 +60,109 @@ body {
 .pagination-container span:active,
 .pagination-container a:disabled,
 .pagination-container span:disabled {
-  background-color: #ffbe98 !important;
+  background-color: #ffbe98 !important; /* Background color on various states */
+  color: white; /* Text color on various states */
+  outline: none; /* Remove outline on focus */
 }
 
-@media only screen and (max-width: 800px) {
-  .gallery-container h1 {
-    font-weight: 450;
-    font-size: 2rem;
-  }
+.pagination-container .disabled-pagination {
+  background-color: #ffbe98 !important; /* Background color for disabled state */
+  color: white; /* Text color for disabled state */
+  cursor: not-allowed; /* Indicate that the element is not interactive */
+  opacity: 0.5; /* Makes the element appear faded */
 }
 
 .modal-container {
-  position: fixed;
-  z-index: 9999;
+  position: fixed; /* Fix position relative to viewport */
+  z-index: 9999; /* Stack on top of other elements */
   left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  overflow: auto;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.8); /* Dim background color */
+  overflow: hidden; /* Enable scrolling if needed */
 }
+
 .modal-container.active {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
+  display: flex; /* Use flexbox for alignment */
+  justify-content: center; /* Center align horizontally */
+  align-items: center; /* Center align vertically */
+  position: fixed; /* Fix position */
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
   background: rgba(0, 0, 0, 0.7); /* Dim background */
-  transition: opacity 0.5s ease-in-out;
-  opacity: 1;
+  transition: opacity 0.5s ease-in-out; /* Transition effect for opacity */
+  opacity: 1; /* Full opacity */
   z-index: 1000; /* Ensure it is above other content */
 }
+
 .modal-container.inactive {
-  opacity: 0;
+  opacity: 0; /* No opacity */
   pointer-events: none; /* Disable interactions when inactive */
 }
+
 .modal-content {
-  max-width: 80vw;
-  max-height: 80vh; /* Limit the maximum height to maintain aspect ratio */
+  max-width: 80vw; /* Limit the maximum width */
+  max-height: 80vh; /* Limit the maximum height */
   object-fit: contain; /* Fit the image inside the container without stretching */
-  position: relative;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative; /* Position relative to container */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Box shadow for modal content */
   border-radius: 10px; /* Rounded corners */
   overflow: hidden; /* Ensure content stays within rounded corners */
   background: #fff; /* White background for content */
   transform: scale(0.9); /* Slightly scaled down by default */
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for transform and opacity */
+  opacity: 0; /* Initial opacity */
 }
+
 .modal-container.active .modal-content {
   transform: scale(1); /* Scale up to full size when active */
   opacity: 1; /* Fully visible when active */
 }
+
 .modal-content img {
-  width: 100%;
+  width: 100%; /* Ensure image takes full width of container */
   height: auto; /* Ensure image maintains aspect ratio */
   object-fit: contain; /* Fit the image inside the container without stretching */
   display: block; /* Ensure no additional space around image */
 }
+
 .close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  color: #aaa;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
+  position: absolute; /* Absolute positioning for close button */
+  top: 10px; /* Position from top */
+  right: 20px; /* Position from right */
+  color: #aaa; /* Color for close button */
+  font-size: 30px; /* Font size for close button */
+  font-weight: bold; /* Font weight for close button */
+  cursor: pointer; /* Pointer cursor on hover */
 }
+
 .caption {
   margin-top: 15px; /* Adjust the top margin as needed */
-  text-align: center;
+  text-align: center; /* Center align text */
   font-size: 18px; /* Font size for the caption */
   color: #fff; /* Caption text color */
-  z-index: 100000;
-  display: inline-block;
+  z-index: 100000; /* High z-index for caption */
+  display: inline-block; /* Display inline-block */
 }
+
 .close:hover,
 .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+  color: #000; /* Color for close button on hover and focus */
+  text-decoration: none; /* Remove text decoration */
+  cursor: pointer; /* Pointer cursor on hover */
 }
-/* Additional styles for the full-size image */
+
 #fullImage {
-  max-width: 100%;
-  max-height: 80vh;
+  max-width: 100%; /* Maximum width of image */
+  max-height: 80vh; /* Maximum height of image */
+}
+
+@media only screen and (max-width: 800px) {
+  .gallery-container h1 {
+    font-weight: 450; /* Adjust font weight for small screens */
+    font-size: 2rem; /* Adjust font size for small screens */
+  }
 }

@@ -25,8 +25,8 @@ function closeAndResetModal() {
 function openModal(element) {
   // Set the full image, caption, and description from the clicked element's data attributes
   fullImage.src = element.dataset.fullImage;
-  modalCaption.textContent = element.dataset.title;
-  modalDescription.textContent = element.dataset.description;
+  //   modalCaption.textContent = element.dataset.title;
+  //   modalDescription.textContent = element.dataset.description;
 
   // Remove the 'inactive' class and add the 'active' class to activate the modal
   modal.classList.remove("inactive");
