@@ -137,6 +137,10 @@ input:not(:placeholder-shown) + label {
   .form-container {
     width: 90vw;
   }
+  .form-container h1 {
+    font-weight: 450;
+    font-size: 2.2rem;
+  }
 }
 
 .success-message {

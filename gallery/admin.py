@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from gallery.models import GalleryImage
 
 # Register your models here.
@@ -7,5 +6,5 @@ from gallery.models import GalleryImage
 
 @admin.register(GalleryImage)
 class GalleryImageAdmin(admin.ModelAdmin):
-    list_display = ('image_title', 'description', 'image', 'slug')
-    search_fields = ('image_title', 'description', 'slug')
+    list_display = ('image_title', 'description', 'image')
+    search_fields = ('image_title', 'description')

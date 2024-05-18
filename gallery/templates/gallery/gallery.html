@@ -6,64 +6,78 @@
 {% block content %}
     <div class="gallery-container">
         <div class="container">
-            <h1 class="fw-light text-center">Gallery</h1>
+            <h1 class="fw-light text-center">Captured Moments</h1>
             <div class="font-italic fw-light text-center lh-md">Immerse yourself in tasty delights!</div>
             <hr>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="grid-item" style="height: 400px;">
-                        <img src="{% static 'media/home/images/index_background.jpg' %}">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row ">
-                        <div class="grid-item" style="height: 200px;">
-                            <img src="{% static 'media/home/images/about-taylor.jpeg' %}">
-                        </div>
-                        <div class="grid-item mr-4" style="height: 200px;">
-                            <img src="{% static 'media/home/images/navbar_logo_modified.png' %}">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="grid-item" style="height: 200px;">
-                            <img src="{% static 'media/gallery/images/government.png' %}">
-                        </div>
-                        <div class="grid-item" style="height: 200px;">
-                            <img src="{% static 'media/gallery/images/vegan-chocolate-donut.jpg' %}">
-                        </div>
-                    </div>
+            <div class="modal-container inactive" id="modal">
+                <div class="modal-content">
+                    <span class="close" id="closeModalButton">&times;</span>
+                    <img id="fullImage" src="" alt="Full Image">
+                    <div id="modalCaption" class="caption" style="color: #aaa;"></div>
+                    <div id="modalDescription" class="caption" style="color: #aaa;"></div>
                 </div>
             </div>
-            <!-- second row -->
             <div class="row">
-                <div class="col-md-4">
-                    <div class="row ">
-                        <div class="grid-item" style="height: 200px;">
-                            <img src="{% static 'media/gallery/images/IMG_8008.jpeg' %}">
-                        </div>
-                        <div class="grid-item mr-4" style="height: 200px;">
-                            <img src="{% static 'media/gallery/images/IMG_8009.jpeg' %}">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="row">
-                        <div class="grid-item" style="height: 200px;">
-                            <img src="{% static 'media/gallery/images/IMG_8010.jpeg' %}">
-                        </div>
-                        <div class="grid-item" style="height: 200px;">
-                            <img src="{% static 'media/gallery/images/IMG_8011.jpeg' %}">
+                {% for item in page_obj %}
+                    <div class="col-md-4">
+                        <div class="grid-item fade-in" style="height: 275px;">
+                            <img class="thumbnail"
+                                 src="{{ item.image.url }}"
+                                 data-full-image="{{ item.image.url }}"
+                                 data-title="{{ item.image_title }}"
+                                 data-description="{{ item.description }}"
+                                 onclick="openModal(this)">
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="grid-item" style="height: 400px;">
-                        <img src="{% static 'media/gallery/images/IMG_8013.jpeg' %}">
-                    </div>
-                </div>
+                {% endfor %}
+            </div>
+            <!-- Pagination Links -->
+            <div class="pagination justify-content-center mt-3 pagination-container">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1" class="page-link mr-2  ">&lt;&lt;</a>
+                    <a href="?page={{ page_obj.previous_page_number }}"
+                       class="page-link mr-2   ">&lt;</a>
+                {% else %}
+                    <span class="page-link mr-2   ">&lt;&lt;</span>
+                    <span class="page-link mr-2   ">&lt;</span>
+                {% endif %}
+                {% if page_obj.paginator.num_pages > 3 %}
+                    {% if page_obj.number > 2 %}
+                        <a href="?page=1" class="page-link ml-2   ">1</a>
+                        <span class="page-link   ">...</span>
+                    {% endif %}
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if num == page_obj.number %}
+                            <span class="page-link current">{{ num }}</span>
+                        {% elif num >= page_obj.number|add:"-1" and num <= page_obj.number|add:"1" %}
+                            <a href="?page={{ num }}" class="page-link   ">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if page_obj.number < page_obj.paginator.num_pages|add:"-1" %}
+                        <span class="page-link">...</span>
+                        <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link ">{{ page_obj.paginator.num_pages }}</a>
+                    {% endif %}
+                {% else %}
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if num == page_obj.number %}
+                            <span class="page-link current">{{ num }}</span>
+                        {% else %}
+                            <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="page-link ml-2">&gt;</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}"
+                       class="page-link ml-2">&gt;&gt;</a>
+                {% else %}
+                    <span class="page-link ml-2">&gt;</span>
+                    <span class="page-link ml-2">&gt;&gt;</span>
+                {% endif %}
             </div>
         </div>
     </div>
 {% endblock content %}
+{% block jsfiles %}
+    <script src="{% static 'gallery/js/gallery.js' %}"></script>
+{% endblock jsfiles %}

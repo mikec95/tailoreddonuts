@@ -54,52 +54,7 @@
                     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
                     crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-            <script>
-                  document.addEventListener('DOMContentLoaded', () => {
-                        const fadeElements = document.querySelectorAll('.fade-in');
-                    
-                        function checkFade() {
-                            fadeElements.forEach((element) => {
-                                const elementTop = element.getBoundingClientRect().top;
-                                const elementBottom = element.getBoundingClientRect().bottom;
-                    
-                                const isVisible = (elementTop >= 0 && elementTop <= window.innerHeight);
-                    
-                                if (isVisible) {
-                                    element.classList.add('visible');
-                                }
-                            });
-                        }
-                    
-                        window.addEventListener('scroll', checkFade);
-                        checkFade(); // Check on page load
-                    });
-                  // Wait for the document to be fully loaded before executing the JavaScript code
-                  $(document).ready(function() {
-                        // Event listener for the 'contact' input field
-                        document.getElementById('phone-number').addEventListener('input', function(e) {
-                              // Remove non-numeric characters from the input value
-                              let inputValue = e.target.value.replace(/[^\d]/g, '');
-                        
-                              // Format the input value based on its length
-                              if (inputValue.length === 11) {
-                                    inputValue = inputValue.replace(/^(\d)(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3-$4'); 
-                              } else if (inputValue.length === 10) {
-                                    inputValue = inputValue.replace(/^(\d{3})(\d{3})(\d{4})$/, '$1-$2-$3'); 
-                              }
-                        
-                              // Update the input field value with the formatted value
-                              e.target.value = inputValue;
-                        });
-
-                        // Get the success message element
-                        const successMessage = document.querySelector('.success-message');
-
-                        // Set a timeout to fade out the message after 3 seconds (adjust as needed)
-                        setTimeout(() => {
-                        successMessage.classList.remove('show'); // Remove the 'show' class to hide the message
-                        }, 3000); // 3000 milliseconds = 3 seconds
-                  });             
-            </script>
+            {% block jsfiles %}
+            {% endblock jsfiles %}
       </body>
 </html>
