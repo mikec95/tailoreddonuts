@@ -77,8 +77,6 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   overflow: auto;
 }
-
-/* Show the modal and fade in */
 .modal-container.active {
   display: flex;
   justify-content: center;
@@ -129,18 +127,20 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+.caption {
+  margin-top: 15px; /* Adjust the top margin as needed */
+  text-align: center;
+  font-size: 18px; /* Font size for the caption */
+  color: #fff; /* Caption text color */
+  z-index: 100000;
+  display: inline-block;
+}
 .close:hover,
 .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
 }
-.caption {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 18px;
-}
-
 /* Additional styles for the full-size image */
 #fullImage {
   max-width: 100%;
