@@ -77,10 +77,9 @@ body {
   z-index: 9999; /* Stack on top of other elements */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
   background-color: rgba(0, 0, 0, 0.8); /* Dim background color */
-  overflow: hidden; /* Enable scrolling if needed */
 }
 
 .modal-container.active {

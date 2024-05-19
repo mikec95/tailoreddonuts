@@ -5,6 +5,7 @@ const modalCaption = document.getElementById("modalCaption");
 const modalDescription = document.getElementById("modalDescription");
 const closeModalButton = document.getElementById("closeModalButton");
 const fadeElements = document.querySelectorAll(".fade-in");
+const modalContainer = document.querySelector(".modal-container");
 
 // Function to close and reset the modal state.
 // Reason being that after the image was closed,
@@ -13,6 +14,7 @@ const fadeElements = document.querySelectorAll(".fade-in");
 function closeAndResetModal() {
   modal.classList.remove("active");
   modal.classList.add("inactive");
+  document.body.style.overflow = "visible";
   fullImage.src = "";
   modalCaption.textContent = "";
   modalDescription.textContent = "";
@@ -31,6 +33,7 @@ function openModal(element) {
   // Remove the 'inactive' class and add the 'active' class to activate the modal
   modal.classList.remove("inactive");
   modal.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 /**
@@ -53,6 +56,7 @@ function checkFade() {
 document.addEventListener("DOMContentLoaded", function () {
   // Close the modal when the close button is clicked
   closeModalButton.addEventListener("click", closeAndResetModal);
+  modalContainer.addEventListener("click", closeAndResetModal);
 
   // Check fade-in elements' visibility on scroll
   window.addEventListener("scroll", checkFade);
