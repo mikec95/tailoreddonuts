@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'home',
     'inquiry',
-    'menu',
+    'locator',
     'gallery',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -61,8 +61,8 @@ TEMPLATES = [
             BASE_DIR / 'templates',  # Project templates directory
             BASE_DIR / 'home/templates',  # Home templates directory
             BASE_DIR / 'inquiry/templates',  # Inquiry templates directory
-            BASE_DIR / 'menu/templates',  # Menu templates directory
-            BASE_DIR / 'gallery/templates'  # Menu templates directory
+            BASE_DIR / 'locator/templates',  # Locator templates directory
+            BASE_DIR / 'gallery/templates'  # Gallery templates directory
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -129,7 +129,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static',
                     BASE_DIR / 'home/static',
                     BASE_DIR / 'inquiry/static',
-                    BASE_DIR / 'menu/static',
+                    BASE_DIR / 'locator/static',
                     BASE_DIR / 'gallery/static']
 
 

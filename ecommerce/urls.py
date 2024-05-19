@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
     path('inquiry/', include('inquiry.urls', namespace='inquiry')),
-    path('menu/', include('menu.urls', namespace='menu')),
+    path('locator/', include('locator.urls', namespace='locator')),
     path('gallery/', include('gallery.urls', namespace='gallery'))
 ]
 
