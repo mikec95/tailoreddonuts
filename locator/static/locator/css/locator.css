@@ -1,0 +1,12 @@
+/* Global Styles */
+:root {
+  --text-color: #452c22;
+  --button-bg: #f7ded0;
+  --body-bg: #f9f9f9;
+  --form-section-bg: #fbf7f5;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text-color);
+}
