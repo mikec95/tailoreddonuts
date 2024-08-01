@@ -52,7 +52,6 @@ body {
   color: #3d241e !important;
 }
 
-/* Customize the navbar-toggler button */
 .navbar-toggler {
   border: none; /* Remove default border */
   position: relative; /* For positioning the lines */
@@ -63,7 +62,6 @@ body {
 
 /* Customize the icon inside the toggler */
 .navbar-toggler-icon {
-  background-color: #f7ded0; /* Transparent background */
   position: relative; /* Position relative for absolute children */
   width: 25px;
   height: 20px; /* Total height of lines and spacing */
@@ -71,6 +69,7 @@ body {
 
 /* Add lines for hamburger icon */
 .navbar-toggler-icon span {
+  background-color: black;
   display: block;
   position: absolute;
   width: 100%; /* Full width of the toggler-icon */
