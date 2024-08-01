@@ -1,29 +1,35 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-<!-- This is a navigation bar (navbar) using Bootstrap's navbar component -->
-<nav class="navbar navbar-expand-lg bg-primary navbar-container"
-     data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg navbar-container" data-bs-theme="dark">
     <div class="container-fluid">
-        <!-- Container to hold the navbar content -->
-        <a class="navbar-brand d-lg-none" href="{% url 'home:home' %}">  <!-- Show only on mobile (hidden on lg and larger screens) -->
+        <!-- Mobile logo -->
+        <a class="navbar-brand d-lg-none" href="{% url 'home:home' %}">
             <img class="navbar-logo"
                  src="{% static 'media/home/images/navbar_logo_modified.png' %}" />
         </a>
+        <!-- Desktop logo -->
         <a class="navbar-brand d-none d-lg-block" href="{% url 'home:home' %}">
             <img class="navbar-logo"
                  src="{% static 'media/home/images/navbar_logo_modified.png' %}" />
         </a>
+        <!-- Navbar Toggler -->
         <button class="navbar-toggler"
                 type="button"
+                style="color:blue"
                 data-bs-toggle="collapse"
-                data-bs-target="#navbarColor01"
-                aria-controls="navbarColor01"
-                aria-expanded="true"
+                data-bs-target="#navbarContent"
+                aria-controls="navbarContent"
+                aria-expanded="false"
                 aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <div class="navbar-toggler-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </button>
-        <div class="navbar-collapse collapse" id="navbarColor01">
-            <ul class="navbar-nav me-auto">
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
                     <a class="nav-link navbar-anchor {% if request.path == '/' %}active{% endif %}"
                        href="{% url 'home:home' %}">Home</a>
@@ -44,7 +50,7 @@
         </div>
     </div>
 </nav>
-<br>
-<br>
-<br>
-<br>
+{% block jsfiles %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
+{% endblock jsfiles %}

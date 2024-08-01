@@ -8,6 +8,7 @@ class InquiryFormAdmin(admin.ModelAdmin):
         'last_name',
         'phone_number',
         'email',
+        'subject',
         'special_requests',
         'date_time_sent'
     ]
@@ -15,18 +16,21 @@ class InquiryFormAdmin(admin.ModelAdmin):
                     'last_name',
                     'phone_number',
                     'email',
+                    'subject',
                     'special_requests',
                     'date_time_sent')
     list_filter = ('first_name',
                    'last_name',
                    'phone_number',
                    'email',
+                   'subject',
                    'special_requests',
                    'date_time_sent')
     search_fields = ('first_name',
                      'last_name',
                      'phone_number',
                      'email',
+                     'subject',
                      'special_requests',
                      'date_time_sent')
 

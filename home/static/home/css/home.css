@@ -1,69 +1,82 @@
+/* Global Styles */
 body {
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
   background-color: #f5f0f2;
 }
 
-/* Parent container for the first section on the home page */
+/* Welcome Section */
 .welcome-container {
   background: url("/static/home/images/index_background.jpg") no-repeat center
     center;
   background-size: cover;
   background-attachment: fixed;
+  display: flex; /* Flexbox for center alignment */
   align-items: center;
   justify-content: center;
-  display: flex; /* Changed to flex for alignment */
 }
 
-/* First row under the welcome container */
 .welcome-row {
+  padding-top: 25px;
   width: 100vw;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
-/* Column on the parent container of the top section. Includes opaque background and welcome blurb */
 .welcome-column {
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
   max-width: 80vw;
 }
+
 .welcome-column h1 {
   font-weight: 450;
   color: #feece2;
   font-size: 3.8rem;
 }
+
 .welcome-column p {
   font-size: 1.5rem;
   color: #feece2;
 }
-.card-image {
-  height: 28vh;
-  object-fit: cover;
-}
+
 .home-page-logo {
   max-height: 200px;
   max-width: 200px;
 }
 
-/* About section */
+/* Card Image */
+.card-image {
+  height: 28vh;
+  object-fit: cover;
+}
+
+/* About Section */
 .about-container {
   background-color: #f5f0f2;
   color: #452c22;
+  padding: 10px; /* Default padding */
 }
+
 .about-container h1 {
   font-weight: 450;
   color: #452c22;
   font-size: 3.8rem;
 }
+
+.about-container p {
+  text-shadow: 1px 1px 2px #dad0cc;
+  color: #42291f;
+}
+
 .custom-line-height-xl {
   line-height: 3;
 }
+
 .text-md-lg {
   font-size: 1.5rem;
 }
+
 .about-image {
   object-fit: cover;
   max-width: 50%;
@@ -74,6 +87,7 @@ body {
   float: left;
   margin-right: 20px;
 }
+
 .fade-in {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -82,25 +96,27 @@ body {
 .fade-in.visible {
   opacity: 1;
 }
-/* Media query for smaller screens */
+
+/* Media Queries */
 @media only screen and (max-width: 800px) {
   .custom-line-height-xl {
     line-height: 2;
   }
+
   .text-md-lg {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
+
   .about-container {
-    padding: 10px; /* Adjusted padding */
+    padding: 10px; /* Adjusted padding for small screens */
   }
+
   .about-container h1,
   .welcome-column h1 {
-    font-weight: 450;
     font-size: 2rem;
   }
-  .welcome-column p {
-    font-size: 1rem;
-    color: #feece2;
-    font-family: "Roboto";
+
+  .about-text {
+    font-size: 1.2rem !important;
   }
 }

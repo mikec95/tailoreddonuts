@@ -1,12 +1,31 @@
 /* Global Styles */
 :root {
-  --text-color: #452c22;
-  --button-bg: #f7ded0;
-  --body-bg: #f9f9f9;
-  --form-section-bg: #fbf7f5;
+  --text-color: #452c22; /* Primary text color */
+  --button-bg: #f7ded0; /* Background color for buttons */
+  --body-bg: #f9f9f9; /* Background color for the body */
+  --form-section-bg: #fbf7f5; /* Background color for form sections */
+}
+body {
+  background-color: var(--body-bg); /* Set the body background color */
+  color: var(--text-color); /* Set the body text color */
 }
 
-body {
-  background-color: var(--body-bg);
-  color: var(--text-color);
+.locator-container {
+  padding: 40px 0px 25px 0px; /* Padding for the locator container */
+}
+
+.locator-container h1 {
+  font-family: "Roboto"; /* Font family for the h1 */
+  color: var(--text-color); /* Text color for the h1 */
+  font-size: 3.8rem; /* Font size for the h1 */
+}
+
+.hide-me {
+  display: none;
+}
+@media only screen and (max-width: 800px) {
+  .locator-container h1 {
+    font-weight: 450; /* Adjust font weight for small screens */
+    font-size: 2rem; /* Adjust font size for small screens */
+  }
 }

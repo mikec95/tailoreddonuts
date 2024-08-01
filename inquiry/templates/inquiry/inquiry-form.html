@@ -12,11 +12,11 @@
     {% endif %}
     <div class="container d-flex justify-content-center form-container">
         <div class="col-sm col-md">
-            <form method="post" action="{% url 'inquiry:submit_inquiry_url' %}">
-                <h1 class="fw-light text-center">Contact Us</h1>
-                <div class="font-italic fw-light text-center lh-md">
-                    Donut worry, we'll be in touch before you can say "glazed perfection"!
-                </div>
+            <h1 class="fw-light text-center">Contact Us</h1>
+            <div class="font-italic fw-light text-center lh-md">Drop Us a Note or Inquire About Catering Services!</div>
+            <form method="post"
+                  id="contact-form"
+                  action="{% url 'inquiry:submit_inquiry_url' %}">
                 <br>
                 {% csrf_token %}
                 <fieldset>
@@ -74,14 +74,27 @@
                         Message:
                         <p class="text-muted" style="font-size: 0.75rem">(required)</p>
                     </legend>
+                    <div class="form-row mb-4">
+                        <div class="form-group col">
+                            <select class="form-control form-input rounded-0"
+                                    id="subject"
+                                    name="subject"
+                                    required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="General Inquiry">General</option>
+                                <option value="Order Issue">Catering Request</option>
+                                <option value="Product Feedback">Feedback</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-row mb-3">
                         <div class="form-group col">
-                            <input type="text"
-                                   class="form-control form-input rounded-0"
-                                   id="special-requests"
-                                   name="special-requests"
-                                   placeholder=""
-                                   required />
+                            <textarea class="form-control form-input rounded-0 message-textarea"
+                                      id="special-requests"
+                                      name="special-requests"
+                                      placeholder=""
+                                      required></textarea>
                         </div>
                     </div>
                 </fieldset>

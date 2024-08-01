@@ -7,6 +7,7 @@ class InquiryForm(models.Model):
     last_name = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=20, default='N/A')
     email = models.EmailField(max_length=255, default='example@example.com')
+    subject = models.CharField(max_length=10)
     special_requests = models.TextField(blank=True, null=True)
     date_time_sent = models.DateTimeField(default=timezone.now)
 

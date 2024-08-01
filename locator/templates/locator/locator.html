@@ -1,17 +1,31 @@
 {% extends "snippets/base.html" %}
 {% load static %}
 {% block cssfiles %}
+    <!-- Include CSS files specific to this page -->
     <link rel="stylesheet" href="{% static 'locator/css/locator.css' %}" />
 {% endblock cssfiles %}
 {% block content %}
-    <div class="container">
-        <h1>Upcoming Events</h1>
-        {% if events %}
-            <ul>
-                {% for event in events %}<li>{{ event.name }} - {{ event.date }}</li>{% endfor %}
-            </ul>
-        {% else %}
-            <p>No upcoming events</p>
-        {% endif %}
+    <div class="locator-container">
+        <div class="container">
+            <h1 class="fw-light text-center">Coming Soon!</h1>
+            <div class="font-italic fw-light text-center lh-md hide-me">
+                Check out our seasonal locations and catering options to enjoy Tailored Donuts at your next event or market visit!
+            </div>
+            <hr>
+            <div class="text-center mt-4">
+                <p class="lead font-weight-light mb-4">Exciting things are on the way, and we can't wait to share them with you.</p>
+                <p class="lead font-weight-light mb-4">In the meantime, please be patient as we prepare something special.</p>
+                <p class="lead font-weight-light mb-4">
+                    If you have a catering request or just want to say hello, please visit our
+                    <a class="font-weight-bold text-primary"
+                       href="{% url 'inquiry:inquiry_url' %}">Contact Form!</a>
+                </p>
+                <p class="lead font-weight-light">Stay tuned for updates and thank you for your support!</p>
+            </div>
+        </div>
     </div>
 {% endblock content %}
+{% block jsfiles %}
+    <!-- Include JavaScript file specific to this page -->
+    {% comment %} <script src="{% static 'locator/js/locator.js' %}"></script> {% endcomment %}
+{% endblock jsfiles %}

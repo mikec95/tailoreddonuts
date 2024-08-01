@@ -21,6 +21,7 @@ def submit_form(request):
                 last_name=request.POST.get('last-name'),
                 phone_number=request.POST.get('phone-number'),
                 email=request.POST.get('email'),
+                subject=request.POST.get('subject'),
                 special_requests=request.POST.get('special-requests')
             )
             form_data.save()
