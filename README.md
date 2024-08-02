@@ -46,8 +46,9 @@ To set up and run the Tailored Donuts Django Project locally, follow these steps
 5. Install dependencies: `pip install -r requirements.txt`
 6. Apply database migrations: `python manage.py migrate`
 7. Create a superuser for admin access: `python manage.py createsuperuser`
-8. Start the development server: `python manage.py runserver`
-9. Access the project in your web browser: [http://localhost:8000/](http://localhost:8000/)
+8. Add .env file to root of project and set up environment variables
+9. Start the development server: `python manage.py runserver`
+10. Access the project in your web browser: [http://localhost:8000/](http://localhost:8000/)
 
 ## Usage
 Once the project is set up, you can:
