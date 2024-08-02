@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tailored Donuts Request Confirmation</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 150px;
+        }
+        .content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #FFB6C1; /* A donut-themed color */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img class="navbar-logo"
+                     src="http://localhost:8000/static/media/home/images/navbar_logo_modified.png"
+                     alt="Tailored Donuts Logo" />
+            </div>
+            <div class="content">
+                <p>Dear {{ user_name }},</p>
+                <p>Thank you for your message! We’ve received it and will get back to you shortly.</p>
+                <p>
+                    In the meantime, why not check out our latest donut creations on our <a href="http://192.168.1.72:8000/gallery">website</a>? We can’t wait to treat you!
+                </p>
+            </div>
+            <div class="footer">
+                <p>
+                    Best regards,
+                    <br>
+                    The Tailored Donuts Team
+                </p>
+                <p>
+                    <a href="http://192.168.1.72:8000">Visit Our Website</a>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
