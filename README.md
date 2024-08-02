@@ -1,6 +1,6 @@
 # Tailored Donuts Django Project
 
-Welcome to the Tailored Donuts Django Project! This project is designed to showcase the menu, handle inquiries, display a gallery, and collect reviews and ratings for Tailored Donuts, a fictional catering service specializing in customizable donuts.
+Welcome to the Tailored Donuts project! This is an ecommerce project for a donut shop named Tailored Donuts, which primarily caters to custom orders and is seasonally present at farmers' markets. The shop is sensitive to gluten and dairy requirements.
 
 ## Table of Contents
 1. [Introduction](#introduction)
