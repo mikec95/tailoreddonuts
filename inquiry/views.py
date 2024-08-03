@@ -42,21 +42,21 @@ def submit_form(request):
                 user_email=email,
                 subject=subject)
 
-        # Send notification email to Administrator
-        send_notification_email(
-            first_name=first_name,
-            last_name=last_name,
-            user_email=email,
-            subject=subject,
-            special_requests=special_requests)
+            # Send notification email to Administrator
+            send_notification_email(
+                first_name=first_name,
+                last_name=last_name,
+                user_email=email,
+                subject=subject,
+                special_requests=special_requests)
 
-        # Add a success message
-        messages.success(
-            request=request,
-            message=f'Thank you for your message! Please check your email for a confirmation.')
+            # Add a success message
+            messages.success(
+                request=request,
+                message=f'Thank you for your message! Please check your email for a confirmation.')
 
-        # Redirect to the inquiry form page
-        return HttpResponseRedirect(reverse('inquiry:inquiry_url'))
+            # Redirect to the inquiry form page
+            return HttpResponseRedirect(reverse('inquiry:inquiry_url'))
         except Exception as e:
             # Handle exceptions and show an error message
             messages.error(request, f'Whoops! An error occurred.')
