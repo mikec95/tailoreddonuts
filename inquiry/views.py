@@ -38,7 +38,6 @@ def submit_form(request):
 
             # Send confirmation email
             send_confirmation_email(
-                request=request,
                 user_name=f"{first_name} {last_name}",
                 user_email=email,
                 subject=subject)
@@ -62,7 +61,7 @@ def submit_form(request):
     return render(request, 'inquiry/inquiry-form.html')
 
 
-def send_confirmation_email(request, user_name, user_email, subject):
+def send_confirmation_email(user_name, user_email, subject):
     """
     Send a confirmation email to the user based on the subject.
     """
@@ -73,10 +72,9 @@ def send_confirmation_email(request, user_name, user_email, subject):
         'Other': 'inquiry/email_templates/email_confirmation_other.html'
     }
 
-    email_subject = 'Tailored Donuts Message Confirmation'
+    email_subject = 'Thank you for your message!'
     from_email = 'mikecarbonari1@gmail.com'
-    template_name = subject_to_template_mapping.get(
-        subject)  # Default to General if not found
+    template_name = subject_to_template_mapping.get(subject)
     context = {'user_name': user_name}
     message = render_to_string(
         f'{template_name}', context)
