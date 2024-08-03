@@ -76,7 +76,7 @@ def send_confirmation_email(user_name, user_email, subject):
         'Other': 'inquiry/email_templates/email_confirmation_other.html'
     }
 
-    email_subject = 'Thank you for your message!'
+    email_subject = 'Thank you for your message!!'
     from_email = 'mikecarbonari1@gmail.com'
     template_name = subject_to_template_mapping.get(subject)
     context = {'user_name': user_name}
