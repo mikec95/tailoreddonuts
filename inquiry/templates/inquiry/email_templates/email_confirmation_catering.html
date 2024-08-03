@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tailored Donuts Request Confirmation</title>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 150px;
+        }
+        .content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+        .footer a {
+            color: #FFB6C1; /* A donut-themed color */
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <img class="navbar-logo"
+                     src="http://localhost:8000/static/media/home/images/navbar_logo_modified.png"
+                     alt="Tailored Donuts Logo" />
+            </div>
+            <div class="content">
+                <p>Dear {{ user_name }},</p>
+                <p>Thank you for your catering request! We’re thrilled to be considered for your event.</p>
+                <p>
+                    Our team will review your request and get back to you with further details as soon as possible. We strive to make every event special with our delicious, tailored donuts.
+                </p>
+                <p>Please allow up to 72 hours for us to review and respond to your request.</p>
+                <p>
+                    If you have any additional details or special requests, please reply to this email or call us at (your contact number).
+                </p>
+            </div>
+            <div class="footer">
+                <p>
+                    Best regards,
+                    <br>
+                    Taylor
+                </p>
+                <p>
+                    <a href="http://192.168.1.72:8000">Visit Our Website</a>
+                </p>
+                <p class="disclaimer">
+                    <p>
+                        Disclaimer: All requests are subject to approval. We review each request individually to ensure we can meet your needs and maintain the highest quality of service. Please allow up to 48 hours for us to process your request. We appreciate your understanding and patience.
+                    </p>
+                    <p>
+                        <strong>Disclaimer:</strong> Please note that while we are committed to being gluten and dairy sensitive, all our products are made in a home kitchen. Therefore, we cannot guarantee that there will be no cross-contamination between ingredients.
+                    </p>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

@@ -37,36 +37,51 @@ def submit_form(request):
             form_data.save()
 
             # Send confirmation email
-            send_confirmation_email(f"{first_name} {last_name}", email)
+            send_confirmation_email(
+                request=request,
+                user_name=f"{first_name} {last_name}",
+                user_email=email,
+                subject=subject)
 
-            # Send notification email to Administrator
-            send_notification_email(first_name=first_name, last_name=last_name,
-                                    user_email=email, subject=subject, special_requests=special_requests)
+        # Send notification email to Administrator
+        # send_notification_email(first_name=first_name, last_name=last_name,
+        #                         user_email=email, subject=subject, special_requests=special_requests)
 
-            # Add a success message
+        # Add a success message
             messages.success(
-                request, f'Thank you for your message! Please check your email  {email} for a confirmation.')
+                request=request,
+                message=f'Thank you for your message! Please check your email for a confirmation.')
 
-            # Redirect to the inquiry form page
+        # Redirect to the inquiry form page
             return HttpResponseRedirect(reverse('inquiry:inquiry_url'))
         except Exception as e:
             # Handle exceptions and show an error message
-            messages.error(request, f'Whoops! An error occurred {e}')
+            messages.error(request, f'Whoops! An error occurred.')
 
     # Render the form page for GET requests or if form submission fails
     return render(request, 'inquiry/inquiry-form.html')
 
 
-def send_confirmation_email(user_name, user_email):
+def send_confirmation_email(request, user_name, user_email, subject):
     """
-    Send a confirmation email to the user.
+    Send a confirmation email to the user based on the subject.
     """
-    subject = 'Tailored Donuts Request Confirmation'
-    from_email = 'mikecarbonari1@gmail.com'
-    context = {'user_name': user_name}
-    message = render_to_string('inquiry/email_confirmation.html', context)
+    subject_to_template_mapping = {
+        'General': 'inquiry/email_templates/email_confirmation_general.html',
+        'Catering Request': 'inquiry/email_templates/email_confirmation_catering.html',
+        'Feedback': 'inquiry/email_templates/email_confirmation_feedback.html',
+        'Other': 'inquiry/email_templates/email_confirmation_other.html'
+    }
 
-    email = EmailMessage(subject, message, from_email, [user_email])
+    email_subject = 'Tailored Donuts Message Confirmation'
+    from_email = 'mikecarbonari1@gmail.com'
+    template_name = subject_to_template_mapping.get(
+        subject)  # Default to General if not found
+    context = {'user_name': user_name}
+    message = render_to_string(
+        f'{template_name}', context)
+
+    email = EmailMessage(email_subject, message, from_email, [user_email])
     email.content_subtype = 'html'
     email.send(fail_silently=False)
 
@@ -84,7 +99,8 @@ def send_notification_email(first_name, last_name, user_email, subject, special_
         'subject': subject,
         'special_requests': special_requests
     }
-    message = render_to_string('inquiry/email_notification.html', context)
+    message = render_to_string(
+        'inquiry/email_templates/email_notification.html', context)
 
     email = EmailMessage(email_subject, message, from_email, [
                          "tailoreddonuts@gmail.com"])
