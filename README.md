@@ -15,11 +15,12 @@ To set up and run the Tailored Donuts Django Project locally, follow these steps
 6. Apply database migrations: `python manage.py migrate`
 7. Create a superuser for admin access: `python manage.py createsuperuser`
 8. Add .env file to root of project and set up environment variables
+   - For local testing, you will only need `DJANGO_SECRET_KEY, DJANGO_DEBUG, DB_ENGINE, DB_NAME, ALLOWED_HOSTS`
    - Use Djecrety to generate a DJANGO_SECRET_KEY
-   - For Email settings, you will need to find an Email app password. This can be found in your email providers website for the FROM_EMAIL you want to test with
+   - For Email settings, you will need to find an Email `app password`. This can be found in your email providers website for the FROM_EMAIL you want to test with
    - For the DEFAULT_HOST_EMAIL you can use the DEFAULT_FROM_EMAIL value for testing locally
-9. Start the development server: `python manage.py runserver`
-10. Access the project in your web browser: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+10. Start the development server: `python manage.py runserver`
+11. Access the project in your web browser: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 ## Table of Contents
 
