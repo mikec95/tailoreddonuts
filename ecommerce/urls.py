@@ -14,5 +14,9 @@ urlpatterns = [
     path('gallery/', include('gallery.urls', namespace='gallery'))
 ]
 
-# Serve media files during development
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serve media files during development from DJANGO server (this will be done with a web server on production)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
